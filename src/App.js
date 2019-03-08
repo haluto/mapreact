@@ -1,23 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import { Input } from 'antd';
+import { Select } from 'antd';
 import MapLoader from "./js/components/MapLoader";
 
 class App extends Component {
+  state = {
+    roads: []
+  };
+
+  componentDidMount = () => {
+    console.log("componentWillMount");
+    fetch("./road.json")
+     .then(res => res.json())
+     .then(json => this.setState({roads: json.roads}));
+  }
+
   render() {
+    let roadItems = [];
+    this.state.roads.map((road, i) => {
+      roadItems.push(
+        <Select.Option key={i} value={road.name}>{road.name}</Select.Option>
+      );
+      return i;
+    });
+
     return (
       <div className="App">
 
         <div className="head-bar">
-          <Input.Search
-            placeholder="input search text"
-            enterButton="Search"
-            size="large"
-            onSearch={value=>console.log(value)}
-            style={{ width: 200 }}
-          />
+          <Select
+            showSearch
+            style={{width:300}}
+            placeholder="请输入路名"
+          >
+            {roadItems}
+          </Select>
         </div>
 
         <div className="map-area">

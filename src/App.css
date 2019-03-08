@@ -29,10 +29,11 @@
 
 .head-bar {
   height: 50px;
-  background-color: rgb(12,12,12);
+  position: absolute;
+  top: 20px;
+  left: 30px;
 }
 
 .map-area {
-  position: absolute;
-  top: 60px;
+
 }

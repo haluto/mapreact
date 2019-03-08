@@ -113,7 +113,7 @@ export default class MapLoader extends React.Component {
         onWheel={this.handleWheel}
         onKeyPress={this.handleKeyPress}
       >
-        <img ref="imgElement" src={this.state.imgSrc}/>
+        <img ref="imgElement" src={this.state.imgSrc} alt=""/>
       </div>
     );
   }
