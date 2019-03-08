@@ -9,6 +9,22 @@ class App extends Component {
     roads: []
   };
 
+  handleSelectChange = (value) => {
+    console.log(`selected ${value}`);
+    let i=0;
+    let found = false;
+
+    for(i=0; i<this.state.roads.length; i++) {
+      if(this.state.roads[i].name === value) {
+        found = true;
+        break;
+      }
+    }
+    if(found === true) {
+      console.log(this.state.roads[i].desc);
+    }
+  }
+
   componentDidMount = () => {
     console.log("componentWillMount");
     fetch("./road.json")
@@ -33,6 +49,7 @@ class App extends Component {
             showSearch
             style={{width:300}}
             placeholder="请输入路名"
+            onChange={this.handleSelectChange}
           >
             {roadItems}
           </Select>
