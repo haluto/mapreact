@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -31,9 +32,9 @@
   height: 50px;
   position: absolute;
   top: 20px;
-  left: 30px;
+  right: 30px;
 }
 
 .map-area {
-
+  overflow: hidden;
 }

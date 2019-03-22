@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
 
 import { Select } from 'antd';
@@ -25,11 +26,24 @@ class App extends Component {
     }
   }
 
+  handleWindowResize = () => {
+    console.log(window.innerWidth);
+
+    let mapArea = ReactDOM.findDOMNode(this.refs.mapArea);
+    mapArea.style.width = `${(window.innerWidth)}px`;
+    mapArea.style.height = `${(window.innerHeight)}px`;
+  }
+
   componentDidMount = () => {
-    console.log("componentWillMount");
     fetch("./road.json")
      .then(res => res.json())
      .then(json => this.setState({roads: json.roads}));
+
+     this.handleWindowResize();
+     window.addEventListener('resize', this.handleWindowResize);
+  }
+  componentWillUnmount = () => {
+    window.removeEventListener('resize', this.handleWindowResize);
   }
 
   render() {
@@ -55,7 +69,7 @@ class App extends Component {
           </Select>
         </div>
 
-        <div className="map-area">
+        <div className="map-area" ref="mapArea">
           <MapLoader />
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import MapImage from "./icon/map.png";
+import MapImage from "./icon/map.jpg";
 
 export default class MapLoader extends React.Component {
   
@@ -10,7 +10,7 @@ export default class MapLoader extends React.Component {
     this.state = { liked: false,
                     imgSrc: "" };
     this.imgInfo = {
-      zoomRatio: 1.0,
+      zoomRatio: 0.2,
       oriW: 0,
       oriH: 0,
     };
@@ -49,17 +49,19 @@ export default class MapLoader extends React.Component {
   */
   changeZoomRatio = (op) => {
     if (op === "+") {
-      this.imgInfo.zoomRatio += 0.2;
-      if (this.imgInfo.zoomRatio > 4.0) {
-        this.imgInfo.zoomRatio = 4.0;
+      this.imgInfo.zoomRatio += 0.02;
+      if (this.imgInfo.zoomRatio > 1.0) {
+        this.imgInfo.zoomRatio = 1.0;
       }
     }
     else if (op === "-") {
-      this.imgInfo.zoomRatio -= 0.2;
-      if (this.imgInfo.zoomRatio < 0.4) {
-        this.imgInfo.zoomRatio = 0.4;
+      this.imgInfo.zoomRatio -= 0.02;
+      if (this.imgInfo.zoomRatio < 0.1) {
+        this.imgInfo.zoomRatio = 0.1;
       }
     }
+
+    console.log("zoom ratio: ", this.imgInfo.zoomRatio);
   }
   
   /*
@@ -85,10 +87,8 @@ export default class MapLoader extends React.Component {
     let delta = e.deltaY;
     if(delta > 0) {
       this.handleZoomout();
-      console.log("zoom out");
     } else if(delta < 0) {
       this.handleZoomin();
-      console.log("zoom in");
     }
 
     // avoid main page scrolling.
