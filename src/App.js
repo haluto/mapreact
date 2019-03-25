@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 
-import { Select } from 'antd';
+import { Select, notification, Icon } from 'antd';
 import MapLoader from "./js/components/MapLoader";
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
     roads: []
   };
 
-  handleSelectChange = (value) => {
+  handleSelectSelected = (value) => {
     console.log(`selected ${value}`);
     let i=0;
     let found = false;
@@ -23,6 +23,20 @@ class App extends Component {
     }
     if(found === true) {
       console.log(this.state.roads[i].desc);
+      notification.close("road-info-notification");
+      notification.open({
+        key: "road-info-notification",
+        message: this.state.roads[i].name,
+        description: this.state.roads[i].desc,
+        duration: 0,
+        //placement: 'topRight',
+        style: {
+          position: 'absolute',
+          top: 45,
+          right: 30,
+        },
+        icon: <Icon type="smile" style={{ color: '#108ee9' }} />,
+      });
     }
   }
 
@@ -35,12 +49,15 @@ class App extends Component {
   }
 
   componentDidMount = () => {
+    console.log("componentDidMount");
+    // TODO: if open index.html with browser, without a server, browsers don't support read local file.
+    // FileReader need input element to get the file.
     fetch("./road.json")
-     .then(res => res.json())
-     .then(json => {this.setState({roads: json.roads});console.log("JSON FILE INFO:", json.roads)});
-
-     this.handleWindowResize();
-     window.addEventListener('resize', this.handleWindowResize);
+      .then(res => res.json())
+      .then(json => {this.setState({roads: json.roads});console.log("JSON FILE INFO:", json.roads)});
+    
+    this.handleWindowResize();
+    window.addEventListener('resize', this.handleWindowResize);
   }
   componentWillUnmount = () => {
     window.removeEventListener('resize', this.handleWindowResize);
@@ -63,7 +80,7 @@ class App extends Component {
             showSearch
             style={{width:300}}
             placeholder="请输入路名"
-            onChange={this.handleSelectChange}
+            onSelect={this.handleSelectSelected}
           >
             {roadItems}
           </Select>
