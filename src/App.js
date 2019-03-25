@@ -37,7 +37,7 @@ class App extends Component {
   componentDidMount = () => {
     fetch("./road.json")
      .then(res => res.json())
-     .then(json => this.setState({roads: json.roads}));
+     .then(json => {this.setState({roads: json.roads});console.log("JSON FILE INFO:", json.roads)});
 
      this.handleWindowResize();
      window.addEventListener('resize', this.handleWindowResize);
