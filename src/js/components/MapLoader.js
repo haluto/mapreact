@@ -45,9 +45,6 @@ export default class MapLoader extends React.Component {
   */
   scaleImage = () => {
     let ele = ReactDOM.findDOMNode(this.refs.imgElement);
-    // reset image's margin.
-    ele.style.marginLeft = `0px`;
-    ele.style.marginTop = `0px`;
 
     let w = this.imgInfo.oriW * this.imgInfo.zoomRatio;
     let h = this.imgInfo.oriH * this.imgInfo.zoomRatio;
@@ -59,19 +56,25 @@ export default class MapLoader extends React.Component {
   change zoom ratio operation.
   */
   changeZoomRatio = (op) => {
+    let ret = '';
     if (op === "+") {
+      ret = 'zoomin';
       this.imgInfo.zoomRatio += 0.02;
       if (this.imgInfo.zoomRatio > 1.0) {
         this.imgInfo.zoomRatio = 1.0;
+        ret = 'zoomin-end';
       }
     }
     else if (op === "-") {
+      ret = 'zoomout';
       this.imgInfo.zoomRatio -= 0.02;
       if (this.imgInfo.zoomRatio < 0.1) {
         this.imgInfo.zoomRatio = 0.1;
+        ret = 'zoomout-end';
       }
     }
     //console.log("zoom ratio: ", this.imgInfo.zoomRatio);
+    return ret;
   }
   
   /*
@@ -86,8 +89,16 @@ export default class MapLoader extends React.Component {
   handleZoomout
   */
   handleZoomout = () => {
-    this.changeZoomRatio("-");
+    let zoom = this.changeZoomRatio("-");
     this.scaleImage();
+    // only reset image's margin when zoomout.
+    if (zoom === 'zoomout') {
+      this.dragImage(100,100);
+    } else if (zoom === 'zoomout-end') {
+      let ele = ReactDOM.findDOMNode(this.refs.imgElement);
+      ele.style.marginLeft = `0px`;
+      ele.style.marginTop = `0px`;
+    }
   }
   
   /*
