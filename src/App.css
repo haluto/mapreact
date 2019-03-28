@@ -47,13 +47,26 @@
   top: 60px;
 }
 .roadpanel-title {
-  background-color: rgb(100,100,100);
+  background-color: rgb(243, 243, 243);
+  border: 2px solid rgb(240, 240, 240);
+  font-size: 20px;
+}
+.roadpanel-close {
+  position: absolute;
+  right: 10px;
+}
+.roadpanel-close:hover {
+  color: rgb(255, 0, 0);
+}
+.roadpanel-close:active {
+  color: rgb(241, 138, 152);
 }
 .roadpanel-onepanel {
   /*border: 1px ridge rgb(200, 200, 200);*/
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 20px;
-  margin: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 .roadpanel-panels {
   background-color: rgb(255,255,255);

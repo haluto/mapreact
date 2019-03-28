@@ -1,9 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Card, Col, Row } from 'antd';
+import { Icon } from 'antd';
 
 export default class RoadPanel extends React.Component {
+  state = {
+    needDisplay: false
+  };
+
+  handleClose = () => {
+    this.setState({needDisplay: false});
+  }
+
+
+  componentWillReceiveProps = (newProps) => {
+    this.setState({needDisplay: newProps.needDisplay});
+  }
+
 
   render = () => {
     let roadInfo = this.props.roadInfo;
@@ -29,8 +42,13 @@ export default class RoadPanel extends React.Component {
     }
 
     return (
-      <div className='roadpanel-container' hidden={!this.props.needDisplay}>
-        <div className='roadpanel-title'>道路名称：{roadInfo.name}</div>
+      <div className='roadpanel-container' hidden={!this.state.needDisplay}>
+        <div className='roadpanel-title'>
+          <div className='roadpanel-close' onClick={this.handleClose}>
+            <Icon type="close-square" />
+          </div>
+          {roadInfo.name}
+        </div>
         <div className='roadpanel-panels'>
           {panels}
         </div>
