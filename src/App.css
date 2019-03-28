@@ -28,7 +28,7 @@
   to { transform: rotate(360deg); }
 }
 
-.head-bar {
+.search-bar {
   height: 50px;
   position: absolute;
   top: 20px;
@@ -37,4 +37,25 @@
 
 .map-area {
   overflow: hidden;
+}
+
+
+/*RoadPanel*/
+.roadpanel-container {
+  position: absolute;
+  right: 30px;
+  top: 60px;
+}
+.roadpanel-title {
+  background-color: rgb(100,100,100);
+}
+.roadpanel-onepanel {
+  /*border: 1px ridge rgb(200, 200, 200);*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 20px;
+  margin: 2px;
+}
+.roadpanel-panels {
+  background-color: rgb(255,255,255);
+  display: flex;
 }

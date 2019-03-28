@@ -4,10 +4,13 @@ import './App.css';
 
 import { Select, notification, Icon } from 'antd';
 import MapLoader from "./js/components/MapLoader";
+import RoadPanel from "./js/components/RoadPanel";
 
 class App extends Component {
   state = {
-    roads: []
+    roads: [],
+    showRoadInfo: false,
+    roadInfo: {}
   };
 
   handleSelectSelected = (value) => {
@@ -22,21 +25,8 @@ class App extends Component {
       }
     }
     if(found === true) {
-      console.log(this.state.roads[i].desc);
-      notification.close("road-info-notification");
-      notification.open({
-        key: "road-info-notification",
-        message: this.state.roads[i].name,
-        description: this.state.roads[i].desc,
-        duration: 0,
-        //placement: 'topRight',
-        style: {
-          position: 'absolute',
-          top: 45,
-          right: 30,
-        },
-        icon: <Icon type="smile" style={{ color: '#108ee9' }} />,
-      });
+      this.setState({showRoadInfo: true,
+                    roadInfo: this.state.roads[i]});
     }
   }
 
@@ -75,7 +65,7 @@ class App extends Component {
     return (
       <div className="App">
 
-        <div className="head-bar">
+        <div className="search-bar">
           <Select
             showSearch
             style={{width:300}}
@@ -85,6 +75,11 @@ class App extends Component {
             {roadItems}
           </Select>
         </div>
+        <RoadPanel 
+          needDisplay={this.state.showRoadInfo}
+          roadInfo={this.state.roadInfo}
+        >
+        </RoadPanel>
 
         <div className="map-area" ref="mapArea">
           <MapLoader />
