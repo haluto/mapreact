@@ -56,6 +56,16 @@
   border: 2px solid rgb(240, 240, 240);
   font-size: 20px;
 }
+.roadpanel-rotate {
+  position: absolute;
+  right: 40px;
+}
+.roadpanel-rotate:hover {
+  color: rgb(17, 175, 248);
+}
+.roadpanel-rotate:active {
+  color: rgb(15, 11, 224);
+}
 .roadpanel-close {
   position: absolute;
   right: 10px;
@@ -72,8 +82,12 @@
   padding: 20px;
   margin-left: 2px;
   margin-right: 2px;
+  margin-bottom: 3px;
 }
 .roadpanel-panels {
   background-color: rgb(255,255,255);
   display: flex;
+  flex-direction: row;
+  max-height: 600px;
+  overflow-y: scroll;
 }

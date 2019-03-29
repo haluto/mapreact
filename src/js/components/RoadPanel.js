@@ -8,6 +8,16 @@ export default class RoadPanel extends React.Component {
     needDisplay: false
   };
 
+  handleRotate = () => {
+    let ele = ReactDOM.findDOMNode(this.refs.roadpanelPanels);
+    // set flex-direction default as "row" in css.
+    if (ele.style.flexDirection === null || ele.style.flexDirection === "" || ele.style.flexDirection === "row") {
+      ele.style.flexDirection = "column";
+    } else if(ele.style.flexDirection === "column") {
+      ele.style.flexDirection = "row";
+    }
+  }
+
   handleClose = () => {
     this.setState({needDisplay: false});
   }
@@ -27,7 +37,7 @@ export default class RoadPanel extends React.Component {
       if(roadInfo.subroads) {
         roadInfo.subroads.map((subroad, i) => {
           panels.push(
-            <div className='roadpanel-onepanel'
+            <div key={i} className='roadpanel-onepanel'
             >
               <div>起点：{subroad.start}</div>
               <div>终点：{subroad.end}</div>
@@ -73,12 +83,17 @@ export default class RoadPanel extends React.Component {
     return (
       <div className='roadpanel-container' hidden={!this.state.needDisplay}>
         <div className='roadpanel-title'>
+          <div className='roadpanel-rotate' hidden={!(roadInfo.subroads && roadInfo.subroads.length>1)}
+            onClick={this.handleRotate}
+          >
+            <Icon type="retweet" />
+          </div>
           <div className='roadpanel-close' onClick={this.handleClose}>
             <Icon type="close-square" />
           </div>
           {roadInfo.name}
         </div>
-        <div className='roadpanel-panels'>
+        <div className='roadpanel-panels' ref='roadpanelPanels'>
           {panels}
         </div>
       </div>
