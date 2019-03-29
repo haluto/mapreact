@@ -28,6 +28,11 @@
   to { transform: rotate(360deg); }
 }
 
+.category-select {
+  position: absolute;
+  top: 20px;
+  right: 330px;
+}
 .search-bar {
   height: 50px;
   position: absolute;

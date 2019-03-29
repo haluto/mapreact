@@ -8,12 +8,33 @@ import RoadPanel from "./js/components/RoadPanel";
 
 class App extends Component {
   state = {
+    category: "XiaChenDaoLu",
     roads: [],
     showRoadInfo: false,
     roadInfo: {}
   };
 
-  handleSelectSelected = (value) => {
+  handleCategorySelected = (value) => {
+    let jsonFile = "";
+
+    switch(value) {
+      case "XiaChenDaoLu":
+      jsonFile = "./xiachendaolu.json";
+      break;
+      case "ZhenJiDaoLu":
+      jsonFile = "./zhenjidaolu.json";
+      break;
+      default:
+      jsonFile = "./xiachendaolu.json";
+      break;
+    }
+
+    fetch(jsonFile)
+      .then(res => res.json())
+      .then(json => {this.setState({roads: json.roads, category: value, showRoadInfo:false});});
+  }
+
+  handleSearchBarSelected = (value) => {
     console.log(`selected ${value}`);
     let i=0;
     let found = false;
@@ -42,7 +63,7 @@ class App extends Component {
     console.log("componentDidMount");
     // TODO: if open index.html with browser, without a server, browsers don't support read local file.
     // FileReader need input element to get the file.
-    fetch("./road.json")
+    fetch("./xiachendaolu.json")
       .then(res => res.json())
       .then(json => {this.setState({roads: json.roads});console.log("JSON FILE INFO:", json.roads)});
     
@@ -65,24 +86,35 @@ class App extends Component {
     return (
       <div className="App">
 
+        <div className="category-select">
+          <Select 
+            defaultValue="XiaChenDaoLu" 
+            style={{width:100}}
+            onSelect={this.handleCategorySelected}
+          >
+            <Select.Option value="XiaChenDaoLu">下沉道路</Select.Option>
+            <Select.Option value="ZhenJiDaoLu">镇级道路</Select.Option>
+          </Select>
+        </div>
         <div className="search-bar">
           <Select
             showSearch
             style={{width:300}}
             placeholder="请输入路名"
-            onSelect={this.handleSelectSelected}
+            onSelect={this.handleSearchBarSelected}
           >
             {roadItems}
           </Select>
         </div>
         <RoadPanel 
           needDisplay={this.state.showRoadInfo}
+          category={this.state.category}
           roadInfo={this.state.roadInfo}
         >
         </RoadPanel>
 
         <div className="map-area" ref="mapArea">
-          <MapLoader roadName={this.state.roadInfo.name} />
+          <MapLoader category={this.state.category} roadName={this.state.roadInfo.name} />
         </div>
       </div>
     );
