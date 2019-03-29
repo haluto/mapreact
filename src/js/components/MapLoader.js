@@ -2,12 +2,87 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import MapImage from "./icon/map.jpg";
+import TingAnLu from "./icon/庭安路.jpg";  //1
+import BaiXuanLu from "./icon/白萱路.jpg"; //2
+import QiuLanLu from "./icon/秋岚路.jpg";  //3
+import LanGuLu from "./icon/兰谷路.jpg";  //4
+import LanSongLu from "./icon/兰嵩路.jpg"; //5
+import LaiYangLu from "./icon/莱阳路.jpg"; //6
+import DongXuLu from "./icon/东煦路.jpg"; //7
+import FanJinLu from "./icon/繁锦路.jpg"; //8
+import DieYiLu from "./icon/蝶衣路.jpg"; //9
+import FangFeiLu from "./icon/芳菲路.jpg"; //10
+import ZiYiLu from "./icon/紫衣路.jpg"; //11
+import QiFanLu from "./icon/启帆路.jpg"; //12
+import LanQiaoLu from "./icon/兰桥路.jpg"; //13
+import FangMeiLu from "./icon/芳湄路.jpg"; //14
+import JinHangLu from "./icon/津行路.jpg"; //15
+import JuFengLu from "./icon/巨峰路.jpg"; //16
+import DongGaoLu from "./icon/东高路.jpg"; //17
+import DeAiLu from "./icon/德爱路.jpg"; //18
+import XieAnLu from "./icon/谐安路.jpg"; //19
+import ZhenTingLu from "./icon/振庭路.jpg"; //20
+import HengAnLu from "./icon/衡安路.jpg"; //21
+import JinJingLu from "./icon/金京路.jpg"; //22
+
 
 const STATUS_NONE = 0;
 const STATUS_DRAG_IMAGE = 1;
 
+const convertRoadImage = (roadStr) => {
+  switch(roadStr) {
+    case "庭安路":
+    return TingAnLu;
+    case "白萱路":
+    return BaiXuanLu;
+    case "秋岚路":
+    return QiuLanLu;
+    case "兰谷路":
+    return LanGuLu;
+    case "兰嵩路":
+    return LanSongLu;
+    case "莱阳路":
+    return LaiYangLu;
+    case "东煦路":
+    return DongXuLu;
+    case "繁锦路":
+    return FanJinLu;
+    case "蝶衣路":
+    return DieYiLu;
+    case "芳菲路":
+    return FangFeiLu;
+    case "紫衣路":
+    return ZiYiLu;
+    case "启帆路":
+    return QiFanLu;
+    case "兰桥路":
+    return LanQiaoLu;
+    case "芳湄路":
+    return FangMeiLu;
+    case "津行路":
+    return JinHangLu;
+    case "巨峰路":
+    return JuFengLu;
+    case "东高路":
+    return DongGaoLu;
+    case "德爱路":
+    return DeAiLu;
+    case "谐安路":
+    return XieAnLu;
+    case "振庭路":
+    return ZhenTingLu;
+    case "衡安路":
+    return HengAnLu;
+    case "金京路":
+    return JinJingLu;
+
+    default:
+    return MapImage;
+  }
+}
+
+
 export default class MapLoader extends React.Component {
-  
   constructor(props) {
     super(props);
     this.state = { liked: false,
@@ -24,6 +99,24 @@ export default class MapLoader extends React.Component {
     };
   }
   
+  componentWillReceiveProps = (newProps) => {
+    if(newProps.roadName != this.props.roadName) {
+      let img = new Image();
+      img.src = convertRoadImage(newProps.roadName);
+
+      img.onload = () => {
+        this.imgInfo.oriW = img.width;
+        this.imgInfo.oriH = img.height;
+        
+        this.setState({
+          imgSrc: img.src,
+        });
+        
+        this.scaleImage();
+      }
+    }
+  }
+
   componentDidMount = () => {
     let img = new Image();
     img.src = MapImage;

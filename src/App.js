@@ -82,7 +82,7 @@ class App extends Component {
         </RoadPanel>
 
         <div className="map-area" ref="mapArea">
-          <MapLoader />
+          <MapLoader roadName={this.state.roadInfo.name} />
         </div>
       </div>
     );

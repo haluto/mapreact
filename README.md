@@ -25,5 +25,14 @@ Mac：
 如遇到还是有问题，执行一下```npm install```。
 
 
-# TODO：
-IE浏览器暂时不能支持。
+# 增加数据的步骤
+## 增加路的信息
+1. 在road.json中增加路的信息。
+
+2. 在地图文件夹中增加地图图片（原始图片太大，用画图3D转化成尺寸较小的图片）。
+
+3. 在MapLoader.js中，
+
+     3.1 import该图片。```import JinJingLu from "./icon/金京路.jpg"```;
+
+     3.2 在convertRoadImage中增加对应关系。``` case "金京路":  return JinJingLu; ```
