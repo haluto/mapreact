@@ -50,13 +50,14 @@ export default class RoadPanel extends React.Component {
               <div>养护单位：{subroad.maintain}</div>
             </div>
           );
+          return i;
         });
       }
     } else if(category === "ZhenJiDaoLu") {
       if(roadInfo.subroads) {
         roadInfo.subroads.map((subroad, i) => {
           panels.push(
-            <div className='roadpanel-onepanel'
+            <div key={i} className='roadpanel-onepanel'
             >
               <div>起点：{subroad.start}</div>
               <div>终点：{subroad.end}</div>
@@ -76,6 +77,7 @@ export default class RoadPanel extends React.Component {
               <div>养护单位：{subroad.maintain}</div>
             </div>
           );
+          return i;
         });
       }
     }

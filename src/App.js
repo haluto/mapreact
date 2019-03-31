@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 
-import { Select, notification, Icon } from 'antd';
+import { Select } from 'antd';
 import MapLoader from "./js/components/MapLoader";
 import RoadPanel from "./js/components/RoadPanel";
 
@@ -59,8 +59,13 @@ class App extends Component {
 
   fetchData = (jsonFile, category, showRoadInfo) => {
     fetch(jsonFile)
-      .then(res => res.json())
-      .then(json => {this.setState({roads: json.roads, category: category, showRoadInfo:showRoadInfo});});
+      .then((res) => {
+        console.log("fetch data from config files.");
+        res.json().then(json => {
+          this.setState({roads: json.roads, category: category, showRoadInfo:showRoadInfo});});
+      }, () => {
+        console.log("fetch data from array.");
+      })
   }
 
   componentDidMount = () => {

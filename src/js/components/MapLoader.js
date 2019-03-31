@@ -175,7 +175,7 @@ export default class MapLoader extends React.Component {
   }
   
   componentWillReceiveProps = (newProps) => {
-    if(newProps.roadName != this.props.roadName) {
+    if(newProps.roadName !== this.props.roadName) {
       let img = new Image();
       img.src = convertRoadImage(newProps.category, newProps.roadName);
 
