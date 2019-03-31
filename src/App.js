@@ -29,9 +29,7 @@ class App extends Component {
       break;
     }
 
-    fetch(jsonFile)
-      .then(res => res.json())
-      .then(json => {this.setState({roads: json.roads, category: value, showRoadInfo:false});});
+    this.fetchData(jsonFile, value, false);
   }
 
   handleSearchBarSelected = (value) => {
@@ -59,13 +57,16 @@ class App extends Component {
     mapArea.style.height = `${(window.innerHeight)}px`;
   }
 
+  fetchData = (jsonFile, category, showRoadInfo) => {
+    fetch(jsonFile)
+      .then(res => res.json())
+      .then(json => {this.setState({roads: json.roads, category: category, showRoadInfo:showRoadInfo});});
+  }
+
   componentDidMount = () => {
     console.log("componentDidMount");
-    // TODO: if open index.html with browser, without a server, browsers don't support read local file.
-    // FileReader need input element to get the file.
-    fetch("./xiachendaolu.json")
-      .then(res => res.json())
-      .then(json => {this.setState({roads: json.roads});console.log("JSON FILE INFO:", json.roads)});
+    
+    this.fetchData("./xiachendaolu.json", "XiaChenDaoLu", false);
     
     this.handleWindowResize();
     window.addEventListener('resize', this.handleWindowResize);
