@@ -19,6 +19,10 @@ Windows：
 Mac：
 只能通过终端打开浏览器：打开终端，输入下面命令：open -a "Google Chrome" --args --disable-web-security然后就可以屏蔽安全访问了[ --args：此参数可有可无]
 
+* 当前采用的方式：
+
+如果fetch失败，则用本地数组。
+
 ## 兼容性问题
 ### ie遇到不支持startWith的问题
 安装babel-polyfill```npm install --save babel-polyfill```并在index.js头上引用```import 'babel-polyfill';```。
@@ -36,3 +40,17 @@ Mac：
      3.1 import该图片。```import JinJingLu from "./icon/金京路.jpg"```;
 
      3.2 在convertRoadImage中增加对应关系。``` case "金京路":  return JinJingLu; ```
+
+
+# 部署服务器
+1. 下载nodejs ```https://nodejs.org/en/```
+2. 安装、启动服务
+```
+npm install -g serve
+serve -s build -l 4000
+```
+3. 打开网页查看(serve命令的提示信息)
+```
+- Local:            http://localhost:4000       │
+- On Your Network:  http://xxx.xxx.xxx.xxx:4000
+```
