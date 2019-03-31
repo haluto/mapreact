@@ -6,6 +6,9 @@ import { Select } from 'antd';
 import MapLoader from "./js/components/MapLoader";
 import RoadPanel from "./js/components/RoadPanel";
 
+import getXiaChenDaoLuData from "./js/localdata/xiachendaolu";
+import getZhenJiDaoLuData from "./js/localdata/zhenjidaolu";
+
 class App extends Component {
   state = {
     category: "XiaChenDaoLu",
@@ -57,16 +60,33 @@ class App extends Component {
     mapArea.style.height = `${(window.innerHeight)}px`;
   }
 
+  /**
+   * fetchData
+   */
   fetchData = (jsonFile, category, showRoadInfo) => {
     fetch(jsonFile)
       .then((res) => {
         console.log("fetch data from config files.");
         res.json().then(json => {
-          this.setState({roads: json.roads, category: category, showRoadInfo:showRoadInfo});});
+          this.setState({roads: json.roads, category: category, showRoadInfo:showRoadInfo});
+        });
       }, () => {
         console.log("fetch data from array.");
-      })
+        let arr = {};
+        switch(category) {
+          case "XiaChenDaoLu":
+          arr = getXiaChenDaoLuData();
+          break;
+          case "ZhenJiDaoLu":
+          arr = getZhenJiDaoLuData();
+          break;
+          default:
+          break;
+        }
+        this.setState({roads: arr.roads, category: category, showRoadInfo:showRoadInfo});
+      });
   }
+
 
   componentDidMount = () => {
     console.log("componentDidMount");
