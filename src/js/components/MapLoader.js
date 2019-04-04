@@ -47,6 +47,7 @@ import zjTingAnLu from "./icon/zhenjidaolu/庭安路.jpg"; //18
 import zjWanAnJie from "./icon/zhenjidaolu/万安街.jpg"; //19
 import zjXinHangLu from "./icon/zhenjidaolu/新行路.jpg"; //20
 import zjYuanHuaLu from "./icon/zhenjidaolu/源华路.jpg"; //21
+import zjDongJingLu from "./icon/zhenjidaolu/东靖路.jpg"; //22
 
 
 const STATUS_NONE = 0;
@@ -147,6 +148,8 @@ const convertRoadImage = (category, roadStr) => {
       return zjXinHangLu;
       case "源华路":
       return zjYuanHuaLu;
+      case "东靖路":
+      return zjDongJingLu;
 
       default:
       return MapImage;
