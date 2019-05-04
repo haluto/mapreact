@@ -67,7 +67,7 @@ export default class RoadPanel extends React.Component {
               <div>路灯（盏）：{subroad.lamp}</div>
               <div>雨水管网（米）：{subroad.rainWaterPipe}</div>
               <div>污水管网（米）：{subroad.dirtyWaterPipe}</div>
-              <div>车行道（m）：{subroad.roadwayLenth}</div>
+              <div>车行道（m）：{subroad.roadwayLength}</div>
               <div>车行道面积（平方米）：{subroad.roadwayArea}</div>
               <div>人行道（m）：{subroad.sidewalkLength}</div>
               <div>人行道面积（平方米）：{subroad.sidewalkArea}</div>
