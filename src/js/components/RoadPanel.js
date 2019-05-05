@@ -80,6 +80,29 @@ export default class RoadPanel extends React.Component {
           return i;
         });
       }
+    } else if(category === "QuGuanDaoLu") {
+      if(roadInfo.subroads) {
+        roadInfo.subroads.map((subroad, i) => {
+          panels.push(
+            <div key={i} className='roadpanel-onepanel'
+            >
+              <div>起点：{subroad.start}</div>
+              <div>终点：{subroad.end}</div>
+              <div>道路等级：{subroad.level}</div>
+              <div>养护单位：{subroad.owner}</div>
+              <div>道路长度：{subroad.length}</div>
+              <div>车行道宽度：{subroad.roadwayWidth}</div>
+              <div>人行道宽度：{subroad.sidewalkWidth}</div>
+              <div>道路宽度：{subroad.width}</div>
+              <div>绿化（m2）：{subroad.green}</div>
+              <div>行道树（株）：{subroad.tree}</div>
+              <div>道路保洁（m）：{subroad.roadClean}</div>
+              <div>市政设施(井盖、护栏、路灯等)：{subroad.facility}</div>
+            </div>
+          );
+          return i;
+        });
+      }
     }
 
     return (

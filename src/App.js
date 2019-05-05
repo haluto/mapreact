@@ -8,6 +8,7 @@ import RoadPanel from "./js/components/RoadPanel";
 
 import getXiaChenDaoLuData from "./js/localdata/xiachendaolu";
 import getZhenJiDaoLuData from "./js/localdata/zhenjidaolu";
+import getQuGuanDaoLuData from "./js/localdata/quguandaolu";
 
 class App extends Component {
   state = {
@@ -27,6 +28,10 @@ class App extends Component {
       case "ZhenJiDaoLu":
       jsonFile = "./zhenjidaolu.json";
       break;
+      case "QuGuanDaoLu":
+      jsonFile = "./quguandaolu.json";
+      break;
+
       default:
       jsonFile = "./xiachendaolu.json";
       break;
@@ -80,6 +85,9 @@ class App extends Component {
           case "ZhenJiDaoLu":
           arr = getZhenJiDaoLuData();
           break;
+          case "QuGuanDaoLu":
+          arr = getQuGuanDaoLuData();
+          break;
           default:
           break;
         }
@@ -120,6 +128,7 @@ class App extends Component {
           >
             <Select.Option value="XiaChenDaoLu">下沉道路</Select.Option>
             <Select.Option value="ZhenJiDaoLu">镇级道路</Select.Option>
+            <Select.Option value="QuGuanDaoLu">区管道路</Select.Option>
           </Select>
         </div>
         <div className="search-bar">

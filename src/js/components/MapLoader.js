@@ -48,6 +48,19 @@ import zjWanAnJie from "./icon/zhenjidaolu/万安街.jpg"; //19
 import zjXinHangLu from "./icon/zhenjidaolu/新行路.jpg"; //20
 import zjYuanHuaLu from "./icon/zhenjidaolu/源华路.jpg"; //21
 import zjDongJingLu from "./icon/zhenjidaolu/东靖路.jpg"; //22
+//区管道路
+import qgYangGaoBeiLu from "./icon/quguandaolu/杨高北路.jpg"; //1
+import qgWuZhouDaDao from "./icon/quguandaolu/五洲大道.jpg"; //2
+import qgHangJinLu from "./icon/quguandaolu/航津路.jpg"; //3
+import qgPuDongBeiLu from "./icon/quguandaolu/浦东北路.jpg"; //4
+import qgDongGeLu from "./icon/quguandaolu/东葛路.jpg"; //5
+import qgHangNanLu from "./icon/quguandaolu/行南路.jpg"; //6
+import qgDongTangLu from "./icon/quguandaolu/东塘路.jpg"; //7
+import qgJinGaoLu from "./icon/quguandaolu/金高路.jpg"; //8
+import qgDongLuZhiLu from "./icon/quguandaolu/东路支路.jpg"; //9
+import qgZhouHaiLu from "./icon/quguandaolu/洲海路.jpg"; //10
+import qgDongJingLu from "./icon/quguandaolu/东靖路.jpg"; //11
+import qgZhangYangBeiLu from "./icon/quguandaolu/张杨北路.jpg"; //12
 
 
 const STATUS_NONE = 0;
@@ -154,7 +167,37 @@ const convertRoadImage = (category, roadStr) => {
       default:
       return MapImage;
     }
-  } else {
+  } else if(category === "QuGuanDaoLu"){
+    switch(roadStr) {
+      case "杨高北路":
+      return qgYangGaoBeiLu;
+      case "五洲大道":
+      return qgWuZhouDaDao;
+      case "航津路":
+      return qgHangJinLu;
+      case "浦东北路":
+      return qgPuDongBeiLu;
+      case "东葛路":
+      return qgDongGeLu;
+      case "行南路":
+      return qgHangNanLu;
+      case "东塘路":
+      return qgDongTangLu;
+      case "金高路":
+      return qgJinGaoLu;
+      case "东路支路":
+      return qgDongLuZhiLu;
+      case "洲海路":
+      return qgZhouHaiLu;
+      case "东靖路":
+      return qgDongJingLu;
+      case "张杨北路":
+      return qgZhangYangBeiLu;
+      
+      default:
+      return MapImage;
+    }
+  }else {
     return MapImage;
   }
 }
