@@ -56,6 +56,10 @@
   border: 2px solid rgb(240, 240, 240);
   font-size: 20px;
 }
+.roadpanel-title-text {
+  margin-right: 50px;
+  margin-left: 10px;
+}
 .roadpanel-rotate {
   position: absolute;
   right: 40px;
@@ -83,6 +87,8 @@
   margin-left: 2px;
   margin-right: 2px;
   margin-bottom: 3px;
+  /*only single panel mode need width=100%(for long title issue.)*/
+  width: 100%;
 }
 .roadpanel-panels {
   background-color: rgb(255,255,255);

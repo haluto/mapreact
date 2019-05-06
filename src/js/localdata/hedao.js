@@ -1,4 +1,10 @@
-{"roads": [
+export default getHeDaoData;
+
+function getHeDaoData() {
+  return HeDaoJson;
+}
+
+const HeDaoJson = {"roads": [
   { "name":   "规划三河",
     "index":  "1",
     "code":   "PD-GH-20740",
@@ -1290,4 +1296,4 @@
       "ownertown": "高行镇"
     }]
   }
-]}
+]};

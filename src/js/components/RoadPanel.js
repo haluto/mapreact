@@ -103,6 +103,28 @@ export default class RoadPanel extends React.Component {
           return i;
         });
       }
+    } else if(category === "HeDao") {
+      if(roadInfo.subroads) {
+        roadInfo.subroads.map((subroad, i) => {
+          panels.push(
+            <div key={i} className='roadpanel-onepanel'
+            >
+              <div>分镇编码：{roadInfo.code}</div>
+              <div>管理等级：{subroad.level}</div>
+              <div>空间长度：{subroad.length}</div>
+              <div>空间面积：{subroad.area}</div>
+              <div>是否跨镇：{subroad.overtown}</div>
+              <div>流经街镇：{subroad.towns}</div>
+              <div>水体分类：{subroad.class}</div>
+              <div>是否管控：{subroad.control}</div>
+              <div>起点：{subroad.start}</div>
+              <div>终点：{subroad.end}</div>
+              <div>所属街镇：{subroad.ownertown}</div>
+            </div>
+          );
+          return i;
+        });
+      }
     }
 
     return (
@@ -116,7 +138,7 @@ export default class RoadPanel extends React.Component {
           <div className='roadpanel-close' onClick={this.handleClose}>
             <Icon type="close-square" />
           </div>
-          {roadInfo.name}
+          <div className='roadpanel-title-text'>{roadInfo.name}</div>
         </div>
         <div className='roadpanel-panels' ref='roadpanelPanels'>
           {panels}
