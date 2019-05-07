@@ -94,6 +94,8 @@ class App extends Component {
           break;
           case "HeDao":
           arr = getHeDaoData();
+          break;
+          
           default:
           break;
         }

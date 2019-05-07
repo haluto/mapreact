@@ -2,204 +2,39 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import MapImage from "./icon/map.jpg";
-// 下沉道路
-import xcTingAnLu from "./icon/xiachendaolu/庭安路.jpg";  //1
-import xcBaiXuanLu from "./icon/xiachendaolu/白萱路.jpg"; //2
-import xcQiuLanLu from "./icon/xiachendaolu/秋岚路.jpg";  //3
-import xcLanGuLu from "./icon/xiachendaolu/兰谷路.jpg";  //4
-import xcLanSongLu from "./icon/xiachendaolu/兰嵩路.jpg"; //5
-import xcLaiYangLu from "./icon/xiachendaolu/莱阳路.jpg"; //6
-import xcDongXuLu from "./icon/xiachendaolu/东煦路.jpg"; //7
-import xcFanJinLu from "./icon/xiachendaolu/繁锦路.jpg"; //8
-import xcDieYiLu from "./icon/xiachendaolu/蝶衣路.jpg"; //9
-import xcFangFeiLu from "./icon/xiachendaolu/芳菲路.jpg"; //10
-import xcZiYiLu from "./icon/xiachendaolu/紫衣路.jpg"; //11
-import xcQiFanLu from "./icon/xiachendaolu/启帆路.jpg"; //12
-import xcLanQiaoLu from "./icon/xiachendaolu/兰桥路.jpg"; //13
-import xcFangMeiLu from "./icon/xiachendaolu/芳湄路.jpg"; //14
-import xcJinHangLu from "./icon/xiachendaolu/津行路.jpg"; //15
-import xcJuFengLu from "./icon/xiachendaolu/巨峰路.jpg"; //16
-import xcDongGaoLu from "./icon/xiachendaolu/东高路.jpg"; //17
-import xcDeAiLu from "./icon/xiachendaolu/德爱路.jpg"; //18
-import xcXieAnLu from "./icon/xiachendaolu/谐安路.jpg"; //19
-import xcZhenTingLu from "./icon/xiachendaolu/振庭路.jpg"; //20
-import xcHengAnLu from "./icon/xiachendaolu/衡安路.jpg"; //21
-import xcJinJingLu from "./icon/xiachendaolu/金京路.jpg"; //22
-// 镇级道路
-import zjDongGaoLu from "./icon/zhenjidaolu/东高路.jpg"; //1
-import zjDongGouLu from "./icon/zhenjidaolu/东沟路.jpg"; //2
-import zjGaoHangJie from "./icon/zhenjidaolu/高行街.jpg"; //3
-import zjGaoXiZhongXinLu from "./icon/zhenjidaolu/高西中心路.jpg"; //4
-import zjGuiHuaYiLu from "./icon/zhenjidaolu/规划一路.jpg"; //5
-import zjHangDeLu from "./icon/zhenjidaolu/行德路.jpg"; //6
-import zjHangNanLu from "./icon/zhenjidaolu/行南路.jpg"; //7
-import zjHangTaiLu from "./icon/zhenjidaolu/行泰路.jpg"; //8
-import zjHangXiLu from "./icon/zhenjidaolu/行西路.jpg"; //9
-import zjHengAnLu from "./icon/zhenjidaolu/衡安路.jpg"; //10
-import zjJiaNanLu from "./icon/zhenjidaolu/佳南路.jpg"; //11
-import zjJingErLu from "./icon/zhenjidaolu/经二路.jpg"; //12
-import zjJuJinLu from "./icon/zhenjidaolu/俱进路.jpg"; //13
-import zjLaiYangLu from "./icon/zhenjidaolu/莱阳路.jpg"; //14
-import zjNanXinLu from "./icon/zhenjidaolu/南新路.jpg"; //15
-import zjNanZhangLu from "./icon/zhenjidaolu/南张路.jpg"; //16
-import zjShuangQiaoLu from "./icon/zhenjidaolu/双桥路.jpg"; //17
-import zjTingAnLu from "./icon/zhenjidaolu/庭安路.jpg"; //18
-import zjWanAnJie from "./icon/zhenjidaolu/万安街.jpg"; //19
-import zjXinHangLu from "./icon/zhenjidaolu/新行路.jpg"; //20
-import zjYuanHuaLu from "./icon/zhenjidaolu/源华路.jpg"; //21
-import zjDongJingLu from "./icon/zhenjidaolu/东靖路.jpg"; //22
-//区管道路
-import qgYangGaoBeiLu from "./icon/quguandaolu/杨高北路.jpg"; //1
-import qgWuZhouDaDao from "./icon/quguandaolu/五洲大道.jpg"; //2
-import qgHangJinLu from "./icon/quguandaolu/航津路.jpg"; //3
-import qgPuDongBeiLu from "./icon/quguandaolu/浦东北路.jpg"; //4
-import qgDongGeLu from "./icon/quguandaolu/东葛路.jpg"; //5
-import qgHangNanLu from "./icon/quguandaolu/行南路.jpg"; //6
-import qgDongTangLu from "./icon/quguandaolu/东塘路.jpg"; //7
-import qgJinGaoLu from "./icon/quguandaolu/金高路.jpg"; //8
-import qgDongLuZhiLu from "./icon/quguandaolu/东路支路.jpg"; //9
-import qgZhouHaiLu from "./icon/quguandaolu/洲海路.jpg"; //10
-import qgDongJingLu from "./icon/quguandaolu/东靖路.jpg"; //11
-import qgZhangYangBeiLu from "./icon/quguandaolu/张杨北路.jpg"; //12
 
 
 const STATUS_NONE = 0;
 const STATUS_DRAG_IMAGE = 1;
 
 const convertRoadImage = (category, roadStr) => {
-  if(category === "XiaChenDaoLu") {
-    switch(roadStr) {
-      case "庭安路":
-      return xcTingAnLu;
-      case "白萱路":
-      return xcBaiXuanLu;
-      case "秋岚路":
-      return xcQiuLanLu;
-      case "兰谷路":
-      return xcLanGuLu;
-      case "兰嵩路":
-      return xcLanSongLu;
-      case "莱阳路":
-      return xcLaiYangLu;
-      case "东煦路":
-      return xcDongXuLu;
-      case "繁锦路":
-      return xcFanJinLu;
-      case "蝶衣路":
-      return xcDieYiLu;
-      case "芳菲路":
-      return xcFangFeiLu;
-      case "紫衣路":
-      return xcZiYiLu;
-      case "启帆路":
-      return xcQiFanLu;
-      case "兰桥路":
-      return xcLanQiaoLu;
-      case "芳湄路":
-      return xcFangMeiLu;
-      case "津行路":
-      return xcJinHangLu;
-      case "巨峰路":
-      return xcJuFengLu;
-      case "东高路":
-      return xcDongGaoLu;
-      case "德爱路":
-      return xcDeAiLu;
-      case "谐安路":
-      return xcXieAnLu;
-      case "振庭路":
-      return xcZhenTingLu;
-      case "衡安路":
-      return xcHengAnLu;
-      case "金京路":
-      return xcJinJingLu;
+  let imagePath;
+  switch(category) {
+    case "XiaChenDaoLu":
+    imagePath = "./icon/xiachendaolu";
+    break;
+    case "ZhenJiDaoLu":
+    imagePath = "./icon/zhenjidaolu";
+    break;
+    case "QuGuanDaoLu":
+    imagePath = "./icon/quguandaolu";
+    break;
+    case "HeDao":
+    imagePath = "./icon/hedao";
+    break;
 
-      default:
-      return MapImage;
-    }
-  } else if(category === "ZhenJiDaoLu") {
-    switch(roadStr) {
-      case "东高路":
-      return zjDongGaoLu;
-      case "东沟路":
-      return zjDongGouLu;
-      case "高行街":
-      return zjGaoHangJie;
-      case "高西中心路":
-      return zjGaoXiZhongXinLu;
-      case "规划一路":
-      return zjGuiHuaYiLu;
-      case "行德路":
-      return zjHangDeLu;
-      case "行南路":
-      return zjHangNanLu;
-      case "行泰路":
-      return zjHangTaiLu;
-      case "行西路":
-      return zjHangXiLu;
-      case "衡安路":
-      return zjHengAnLu;
-      case "佳南路":
-      return zjJiaNanLu;
-      case "经二路":
-      return zjJingErLu;
-      case "俱进路":
-      return zjJuJinLu;
-      case "莱阳路":
-      return zjLaiYangLu;
-      case "南新路":
-      return zjNanXinLu;
-      case "南张路":
-      return zjNanZhangLu;
-      case "双桥路":
-      return zjShuangQiaoLu;
-      case "庭安路":
-      return zjTingAnLu;
-      case "万安街":
-      return zjWanAnJie;
-      case "新行路":
-      return zjXinHangLu;
-      case "源华路":
-      return zjYuanHuaLu;
-      case "东靖路":
-      return zjDongJingLu;
-
-      default:
-      return MapImage;
-    }
-  } else if(category === "QuGuanDaoLu"){
-    switch(roadStr) {
-      case "杨高北路":
-      return qgYangGaoBeiLu;
-      case "五洲大道":
-      return qgWuZhouDaDao;
-      case "航津路":
-      return qgHangJinLu;
-      case "浦东北路":
-      return qgPuDongBeiLu;
-      case "东葛路":
-      return qgDongGeLu;
-      case "行南路":
-      return qgHangNanLu;
-      case "东塘路":
-      return qgDongTangLu;
-      case "金高路":
-      return qgJinGaoLu;
-      case "东路支路":
-      return qgDongLuZhiLu;
-      case "洲海路":
-      return qgZhouHaiLu;
-      case "东靖路":
-      return qgDongJingLu;
-      case "张杨北路":
-      return qgZhangYangBeiLu;
-      
-      default:
-      return MapImage;
-    }
-  }else {
-    return MapImage;
+    default:
+    break;
   }
+
+  let imageSrc;
+  try {
+    imageSrc = require(`${imagePath}/${roadStr}.jpg`);
+  } catch (e) {
+    console.warn("check imageSrc error: " + imageSrc);
+    imageSrc = MapImage;
+  }
+  return imageSrc;
 }
 
 
