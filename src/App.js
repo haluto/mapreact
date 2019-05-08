@@ -10,6 +10,7 @@ import getXiaChenDaoLuData from "./js/localdata/xiachendaolu";
 import getZhenJiDaoLuData from "./js/localdata/zhenjidaolu";
 import getQuGuanDaoLuData from "./js/localdata/quguandaolu";
 import getHeDaoData from "./js/localdata/hedao";
+import getLvHuaData from "./js/localdata/lvhua";
 
 class App extends Component {
   state = {
@@ -34,6 +35,9 @@ class App extends Component {
       break;
       case "HeDao":
       jsonFile = "./hedao.json";
+      break;
+      case "LvHua":
+      jsonFile = "./lvhua.json";
       break;
 
       default:
@@ -95,7 +99,10 @@ class App extends Component {
           case "HeDao":
           arr = getHeDaoData();
           break;
-          
+          case "LvHua":
+          arr = getLvHuaData();
+          break;
+
           default:
           break;
         }
@@ -138,6 +145,7 @@ class App extends Component {
             <Select.Option value="ZhenJiDaoLu">镇级道路</Select.Option>
             <Select.Option value="QuGuanDaoLu">区管道路</Select.Option>
             <Select.Option value="HeDao">河道水体</Select.Option>
+            <Select.Option value="LvHua">绿化</Select.Option>
           </Select>
         </div>
         <div className="search-bar">

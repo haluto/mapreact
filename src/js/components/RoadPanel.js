@@ -126,6 +126,19 @@ export default class RoadPanel extends React.Component {
           return i;
         });
       }
+    } else if(category === "LvHua") {
+      if(roadInfo.subroads) {
+        roadInfo.subroads.map((subroad, i) => {
+          panels.push(
+            <div key={i} className='roadpanel-onepanel'
+            >
+              <div>面积（m2）：{subroad.area}</div>
+              <div>养护单位：{subroad.maintain}</div>
+            </div>
+          );
+          return i;
+        });
+      }
     }
 
     return (

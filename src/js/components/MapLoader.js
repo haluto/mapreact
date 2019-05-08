@@ -22,6 +22,9 @@ const convertRoadImage = (category, roadStr) => {
     case "HeDao":
     imagePath = "./icon/hedao";
     break;
+    case "LvHua":
+    imagePath = "./icon/lvhua";
+    break;
 
     default:
     break;
