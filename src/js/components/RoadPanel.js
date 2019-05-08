@@ -109,6 +109,7 @@ export default class RoadPanel extends React.Component {
           panels.push(
             <div key={i} className='roadpanel-onepanel'
             >
+              <div>序号：{roadInfo.index}</div>
               <div>分镇编码：{roadInfo.code}</div>
               <div>管理等级：{subroad.level}</div>
               <div>空间长度：{subroad.length}</div>
