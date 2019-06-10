@@ -28,16 +28,28 @@
   to { transform: rotate(360deg); }
 }
 
-.category-select {
+.tabs-main {
   position: absolute;
-  top: 20px;
-  right: 330px;
+  top: 0px;
+  right: 30px;
+  width: 500px;
+}
+
+.tab-search-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.category-select {
+  /*position: absolute;*/
+  /*top: 20px;*/
+  /*right: 330px;*/
 }
 .search-bar {
-  height: 50px;
-  position: absolute;
-  top: 20px;
-  right: 30px;
+  /*height: 50px;*/
+  /*position: absolute;*/
+  /*top: 20px;*/
+  /*right: 30px;*/
 }
 
 .map-area {
@@ -49,7 +61,7 @@
 .roadpanel-container {
   position: absolute;
   right: 30px;
-  top: 60px;
+  top: 110px;
 }
 .roadpanel-title {
   background-color: rgb(243, 243, 243);

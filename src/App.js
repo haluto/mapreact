@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 
-import { Select } from 'antd';
+import { Select, Tabs } from 'antd';
 import MapLoader from "./js/components/MapLoader";
 import RoadPanel from "./js/components/RoadPanel";
 
@@ -12,12 +12,18 @@ import getQuGuanDaoLuData from "./js/localdata/quguandaolu";
 import getHeDaoData from "./js/localdata/hedao";
 import getLvHuaData from "./js/localdata/lvhua";
 
+const TAB_IDX_GLOBAL_VIEW = "TabGlobalView";
+const TAB_IDX_SEARCH = "TabSearch";
+const TAB_IDX_DEFAULT = TAB_IDX_GLOBAL_VIEW;
+
 class App extends Component {
   state = {
     category: "XiaChenDaoLu",
     roads: [],
     showRoadInfo: false,
-    roadInfo: {}
+    roadInfo: {},
+
+    tabIdx: TAB_IDX_DEFAULT
   };
 
   handleCategorySelected = (value) => {
@@ -123,6 +129,10 @@ class App extends Component {
     window.removeEventListener('resize', this.handleWindowResize);
   }
 
+  handleTabChange = (key) => {
+    this.setState({tabIdx: key});
+  }
+
   render() {
     let roadItems = [];
     this.state.roads.map((road, i) => {
@@ -135,39 +145,56 @@ class App extends Component {
     return (
       <div className="App">
 
-        <div className="category-select">
-          <Select 
-            defaultValue="XiaChenDaoLu" 
-            style={{width:100}}
-            onSelect={this.handleCategorySelected}
-          >
-            <Select.Option value="XiaChenDaoLu">下沉道路</Select.Option>
-            <Select.Option value="ZhenJiDaoLu">镇级道路</Select.Option>
-            <Select.Option value="QuGuanDaoLu">区管道路</Select.Option>
-            <Select.Option value="HeDao">河道水体</Select.Option>
-            <Select.Option value="LvHua">绿化</Select.Option>
-          </Select>
+        <div className="tabs-main">
+          <Tabs defaultActiveKey={TAB_IDX_DEFAULT} type="card" onChange={this.handleTabChange}>
+            <Tabs.TabPane tab="道路总览" key={TAB_IDX_GLOBAL_VIEW}>
+            </Tabs.TabPane>
+
+            <Tabs.TabPane tab="道路搜索" key={TAB_IDX_SEARCH}>
+              <div className="tab-search-panel">
+                <div className="category-select">
+                  <Select 
+                    defaultValue="XiaChenDaoLu" 
+                    style={{width:100}}
+                    onSelect={this.handleCategorySelected}
+                  >
+                    <Select.Option value="XiaChenDaoLu">下沉道路</Select.Option>
+                    <Select.Option value="ZhenJiDaoLu">镇级道路</Select.Option>
+                    <Select.Option value="QuGuanDaoLu">区管道路</Select.Option>
+                    <Select.Option value="HeDao">河道水体</Select.Option>
+                    <Select.Option value="LvHua">绿化</Select.Option>
+                  </Select>
+                </div>
+                <div className="search-bar">
+                  <Select
+                    showSearch
+                    style={{width:300}}
+                    placeholder="请输入路名"
+                    onSelect={this.handleSearchBarSelected}
+                  >
+                    {roadItems}
+                  </Select>
+                </div>
+              </div>
+            </Tabs.TabPane>
+          </Tabs>
         </div>
-        <div className="search-bar">
-          <Select
-            showSearch
-            style={{width:300}}
-            placeholder="请输入路名"
-            onSelect={this.handleSearchBarSelected}
-          >
-            {roadItems}
-          </Select>
-        </div>
+
+        {/*MapViewer is for GLOBAL VIEW TAB*/}
+
+
+        {/*RoadPanel and MapLoader are for SEARCH TAB*/}
         <RoadPanel 
-          needDisplay={this.state.showRoadInfo}
+          needDisplay={(this.state.showRoadInfo && (this.state.tabIdx===TAB_IDX_SEARCH))}
           category={this.state.category}
           roadInfo={this.state.roadInfo}
         >
         </RoadPanel>
 
-        <div className="map-area" ref="mapArea">
+        <div className="map-area" ref="mapArea" hidden={!(this.state.tabIdx===TAB_IDX_SEARCH)}>
           <MapLoader category={this.state.category} roadName={this.state.roadInfo.name} />
         </div>
+        {/*RoadPanel and MapLoader are for SEARCH TAB*/}
       </div>
     );
   }
