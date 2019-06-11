@@ -5,6 +5,7 @@ import './App.css';
 import { Select, Tabs } from 'antd';
 import MapLoader from "./js/components/MapLoader";
 import RoadPanel from "./js/components/RoadPanel";
+import MapViewer from "./js/components/MapViewer";
 
 import getXiaChenDaoLuData from "./js/localdata/xiachendaolu";
 import getZhenJiDaoLuData from "./js/localdata/zhenjidaolu";
@@ -77,6 +78,10 @@ class App extends Component {
     let mapArea = ReactDOM.findDOMNode(this.refs.mapArea);
     mapArea.style.width = `${(window.innerWidth)}px`;
     mapArea.style.height = `${(window.innerHeight)}px`;
+
+    let mapArea2 = ReactDOM.findDOMNode(this.refs.mapArea2);
+    mapArea2.style.width = `${(window.innerWidth)}px`;
+    mapArea2.style.height = `${(window.innerHeight)}px`;
   }
 
   /**
@@ -181,11 +186,13 @@ class App extends Component {
         </div>
 
         {/*MapViewer is for GLOBAL VIEW TAB*/}
-
+        <div className="map-area" ref="mapArea2" hidden={!(this.state.tabIdx===TAB_IDX_GLOBAL_VIEW)}>
+        <MapViewer />
+        </div>
 
         {/*RoadPanel and MapLoader are for SEARCH TAB*/}
         <RoadPanel 
-          needDisplay={(this.state.showRoadInfo && (this.state.tabIdx===TAB_IDX_SEARCH))}
+          needDisplay={((this.state.showRoadInfo===true) && (this.state.tabIdx===TAB_IDX_SEARCH))}
           category={this.state.category}
           roadInfo={this.state.roadInfo}
         >
