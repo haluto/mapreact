@@ -11,11 +11,17 @@ import ImgZhenJi from "./icon/globalview/镇级道路.png";
 const STATUS_NONE = 0;
 const STATUS_DRAG_IMAGE = 1;
 
+const IDX_Main = 0;
+const IDX_QuGuan = 1;
+const IDX_XiaChen = 2;
+const IDX_ZhenJi = 3;
+const IDX_WeiYiJiao = 4;
+const IDX_Building = 5;
+const IDX_Total = 6;
+
 export default class MapViewer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { liked: false,
-                    imgSrc: "" };
     this.imgInfo = {
       zoomRatio: 0.2,
       oriW: 0,
@@ -38,10 +44,6 @@ export default class MapViewer extends React.Component {
         this.imgInfo.oriW = img.width;
         this.imgInfo.oriH = img.height;
         
-        this.setState({
-          imgSrc: img.src,
-        });
-        
         this.scaleImage();
       }
     }
@@ -56,24 +58,60 @@ export default class MapViewer extends React.Component {
       this.imgInfo.oriW = img.width;
       this.imgInfo.oriH = img.height;
       
-      this.setState({
-        imgSrc: img.src,
-      });
-      
       this.scaleImage();
     }
   }
   
-  /*
-  scaleImage
-  */
-  scaleImage = () => {
-    let ele = ReactDOM.findDOMNode(this.refs.imgElement);
+  /**
+   * 
+   */
+  getRefByIndex = (i) => {
+    let ref;
+    switch(i) {
+      case IDX_Main:
+        ref = this.refs.refImgMain;
+        break;
+      case IDX_QuGuan:
+        ref = this.refs.refImgQuGuan;
+        break;
+      case IDX_XiaChen:
+        ref = this.refs.refImgXiaChen;
+        break;
+      case IDX_ZhenJi:
+        ref = this.refs.refImgZhenJi;
+        break;
+      case IDX_WeiYiJiao:
+        ref = this.refs.refImgWeiYiJiao;
+        break;
+      case IDX_Building:
+        ref = this.refs.refImgBuilding;
+        break;
+      default:
+        console.error("Error when get global viewer image ref, index: " + i);
+        break;
+    }
 
-    let w = this.imgInfo.oriW * this.imgInfo.zoomRatio;
-    let h = this.imgInfo.oriH * this.imgInfo.zoomRatio;
-    ele.width = w;
-    ele.height = h;
+    return ref;
+  }
+
+  /**
+   * scaleImage
+   */
+  scaleImage = () => {
+    for(let i=0;i<IDX_Total;i++) {
+      let ref = this.getRefByIndex(i);
+      
+      // LOGIC START.
+      let ele = ReactDOM.findDOMNode(ref);
+      if (ele === null) {
+        break;
+      }
+      let w = this.imgInfo.oriW * this.imgInfo.zoomRatio;
+      let h = this.imgInfo.oriH * this.imgInfo.zoomRatio;
+      ele.width = w;
+      ele.height = h;
+      // LOGIC END.
+    }
   }
   
   /*
@@ -119,9 +157,19 @@ export default class MapViewer extends React.Component {
     if (zoom === 'zoomout') {
       this.dragImage(100,100);
     } else if (zoom === 'zoomout-end') {
-      let ele = ReactDOM.findDOMNode(this.refs.imgElement);
-      ele.style.marginLeft = `0px`;
-      ele.style.marginTop = `0px`;
+      for(let i=0;i<IDX_Total;i++) {
+        let ref = this.getRefByIndex(i);
+        
+        // LOGIC START.
+        let ele = ReactDOM.findDOMNode(ref);
+        if (ele === null) {
+          break;
+        }
+
+        ele.style.marginLeft = `0px`;
+        ele.style.marginTop = `0px`;
+        // LOGIC END.
+      }
     }
   }
   
@@ -166,40 +214,50 @@ export default class MapViewer extends React.Component {
    * dragImage
    */
   dragImage(moveX, moveY) {
-    let ele = ReactDOM.findDOMNode(this.refs.imgElement);
-    let deltaX = ele.width - window.innerWidth;
-    let deltaY = ele.height - window.innerHeight;
+    for(let i=0;i<IDX_Total;i++) {
+      let ref = this.getRefByIndex(i);
+      
+      // LOGIC START.
+      let ele = ReactDOM.findDOMNode(ref);
+      if(ele === null) {
+        break;
+      }
 
-    if (typeof(ele.style.marginLeft) === 'undefined' || ele.style.marginLeft === '') {
-      ele.style.marginLeft = '0px';
-    }
-    if (typeof(ele.style.marginTop) === 'undefined' || ele.style.marginTop === '') {
-      ele.style.marginTop = '0px';
-    }
-    let marginLeft = parseInt(ele.style.marginLeft, 10);
-    let marginTop = parseInt(ele.style.marginTop, 10);
+      let deltaX = ele.width - window.innerWidth;
+      let deltaY = ele.height - window.innerHeight;
 
-    if (deltaX > 0) {
-      marginLeft += moveX;
-      if (marginLeft > 0) {
-        marginLeft = 0;
+      if (typeof(ele.style.marginLeft) === 'undefined' || ele.style.marginLeft === '') {
+        ele.style.marginLeft = '0px';
       }
-      if (Math.abs(marginLeft) - deltaX > 0) {
-        marginLeft = -deltaX;
+      if (typeof(ele.style.marginTop) === 'undefined' || ele.style.marginTop === '') {
+        ele.style.marginTop = '0px';
       }
+      let marginLeft = parseInt(ele.style.marginLeft, 10);
+      let marginTop = parseInt(ele.style.marginTop, 10);
+
+      if (deltaX > 0) {
+        marginLeft += moveX;
+        if (marginLeft > 0) {
+          marginLeft = 0;
+        }
+        if (Math.abs(marginLeft) - deltaX > 0) {
+          marginLeft = -deltaX;
+        }
+      }
+      if (deltaY > 0) {
+        marginTop += moveY;
+        if (marginTop > 0) {
+          marginTop = 0;
+        }
+        if (Math.abs(marginTop) - deltaY > 0) {
+          marginTop = -deltaY;
+        }
+      }
+      // remember reset marginLeft/marginTop when scale image.
+      ele.style.marginLeft = `${marginLeft}px`;
+      ele.style.marginTop = `${marginTop}px`;
+      // LOGIC END.
     }
-    if (deltaY > 0) {
-      marginTop += moveY;
-      if (marginTop > 0) {
-        marginTop = 0;
-      }
-      if (Math.abs(marginTop) - deltaY > 0) {
-        marginTop = -deltaY;
-      }
-    }
-    // remember reset marginLeft/marginTop when scale image.
-    ele.style.marginLeft = `${marginLeft}px`;
-    ele.style.marginTop = `${marginTop}px`;
   }
 
   /******************************
@@ -233,14 +291,21 @@ export default class MapViewer extends React.Component {
 
   render = () => {
     return (
-      <div tabIndex="0"
+      <div tabIndex="0" className="global-view-container"
         onMouseDown={this.handleMouseDown}
         onMouseMove={this.handleMouseMove}
         onMouseUp={this.handleMouseUp}
         onWheel={this.handleWheel}
         onKeyDown={this.handleKeyDown}
       >
-        <img ref="imgElement" src={this.state.imgSrc} alt=""/>
+        <img ref="refImgMain" src={ImgMain} alt="" className="global-view-img-main"/>
+
+        <img hidden={false} ref="refImgQuGuan" src={ImgQuGuan} alt="" className="global-view-img-mask"/>
+        <img hidden={false} ref="refImgZhenJi" src={ImgZhenJi} alt="" className="global-view-img-mask"/>
+        <img hidden={false} ref="refImgXiaChen" src={ImgXiaChen} alt="" className="global-view-img-mask"/>
+        <img hidden={false} ref="refImgWeiYiJiao" src={ImgWeiYiJiao} alt="" className="global-view-img-mask"/>
+        <img hidden={false} ref="refImgBuilding" src={ImgBuilding} alt="" className="global-view-img-mask"/>
+
       </div>
     );
   }

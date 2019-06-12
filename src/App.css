@@ -33,6 +33,7 @@
   top: 0px;
   right: 30px;
   width: 500px;
+  z-index: 100;
 }
 
 .tab-search-panel {
@@ -108,4 +109,25 @@
   flex-direction: row;
   max-height: 600px;
   overflow-y: scroll;
+}
+
+/*
+想要让position为absolute的元素overflow hidden生效，需要设置父元素position为relative。
+*/
+.global-view-container {
+  position: relative;
+}
+.global-view-img-main {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  overflow: hidden;
+  z-index: 1;
+}
+.global-view-img-mask {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  overflow: hidden;
+  z-index: 20;
 }
