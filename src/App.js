@@ -28,8 +28,7 @@ class App extends Component {
     tabIdx: TAB_IDX_DEFAULT,
 
     //for global view panel
-    checkedZhenJi:false,
-    checkedQuGuan: false
+    checkboxValues: []
   };
 
   handleCategorySelected = (value) => {
@@ -145,6 +144,7 @@ class App extends Component {
 
   handleCheckboxChange = (checkedValues) => {
     console.log('checked = ', checkedValues);
+    this.setState({checkboxValues: checkedValues});
   }
 
   render() {
@@ -225,7 +225,7 @@ class App extends Component {
 
         {/*MapViewer is for GLOBAL VIEW TAB*/}
         <div className="map-area" ref="mapArea2" hidden={!(this.state.tabIdx===TAB_IDX_GLOBAL_VIEW)}>
-        <MapViewer />
+        <MapViewer checkedRoads={this.state.checkboxValues}/>
         </div>
 
         {/*RoadPanel and MapLoader are for SEARCH TAB*/}
