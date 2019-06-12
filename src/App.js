@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 
-import { Select, Tabs } from 'antd';
+import { Select, Tabs, Checkbox } from 'antd';
 import MapLoader from "./js/components/MapLoader";
 import RoadPanel from "./js/components/RoadPanel";
 import MapViewer from "./js/components/MapViewer";
@@ -19,12 +19,17 @@ const TAB_IDX_DEFAULT = TAB_IDX_GLOBAL_VIEW;
 
 class App extends Component {
   state = {
+    //for search panel
     category: "XiaChenDaoLu",
     roads: [],
     showRoadInfo: false,
     roadInfo: {},
 
-    tabIdx: TAB_IDX_DEFAULT
+    tabIdx: TAB_IDX_DEFAULT,
+
+    //for global view panel
+    checkedZhenJi:false,
+    checkedQuGuan: false
   };
 
   handleCategorySelected = (value) => {
@@ -138,6 +143,10 @@ class App extends Component {
     this.setState({tabIdx: key});
   }
 
+  handleCheckboxChange = (checkedValues) => {
+    console.log('checked = ', checkedValues);
+  }
+
   render() {
     let roadItems = [];
     this.state.roads.map((road, i) => {
@@ -151,8 +160,37 @@ class App extends Component {
       <div className="App">
 
         <div className="tabs-main">
-          <Tabs defaultActiveKey={TAB_IDX_DEFAULT} type="card" onChange={this.handleTabChange}>
+          <Tabs defaultActiveKey={TAB_IDX_DEFAULT} type="card" tabPosition="right" onChange={this.handleTabChange}>
             <Tabs.TabPane tab="道路总览" key={TAB_IDX_GLOBAL_VIEW}>
+              <div className="tab-global-view-panel">
+                <Checkbox.Group style={{ width: '100%' }} onChange={this.handleCheckboxChange}>
+                  <div className="tab-global-view-checkbox-item">
+                    <Checkbox value="vCheckZhenJi"></Checkbox>
+                    <div style={{width:"40px",height:"20px",backgroundColor:"rgb(240,130,120)",marginLeft:"5px",marginRight:"5px"}}></div>
+                    <div>镇级道路</div>
+                  </div>
+                  <div className="tab-global-view-checkbox-item">
+                    <Checkbox value="vCheckQuGuan"></Checkbox>
+                    <div style={{width:"40px",height:"20px",backgroundColor:"rgb(163,204,129)",marginLeft:"5px",marginRight:"5px"}}></div>
+                    <div>区管道路</div>
+                  </div>
+                  <div className="tab-global-view-checkbox-item">
+                    <Checkbox value="vCheckXiaChen"></Checkbox>
+                    <div style={{width:"40px",height:"20px",backgroundColor:"rgb(124,133,183)",marginLeft:"5px",marginRight:"5px"}}></div>
+                    <div>下沉道路</div>
+                  </div>
+                  <div className="tab-global-view-checkbox-item">
+                    <Checkbox value="vCheckWeiYiJiao"></Checkbox>
+                    <div style={{width:"40px",height:"20px",backgroundColor:"rgb(235,185,122)",marginLeft:"5px",marginRight:"5px"}}></div>
+                    <div>未移交（在建）道路</div>
+                  </div>
+                  <div className="tab-global-view-checkbox-item">
+                    <Checkbox value="vCheckBuilding"></Checkbox>
+                    <div style={{width:"40px",height:"20px",backgroundColor:"rgb(255,255,255)",marginLeft:"5px",marginRight:"5px"}}></div>
+                    <div>建筑设施</div>
+                  </div>
+                </Checkbox.Group>
+              </div>
             </Tabs.TabPane>
 
             <Tabs.TabPane tab="道路搜索" key={TAB_IDX_SEARCH}>

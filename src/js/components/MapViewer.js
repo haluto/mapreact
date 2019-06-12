@@ -23,7 +23,7 @@ export default class MapViewer extends React.Component {
   constructor(props) {
     super(props);
     this.imgInfo = {
-      zoomRatio: 0.2,
+      zoomRatio: 0.26,
       oriW: 0,
       oriH: 0,
     };

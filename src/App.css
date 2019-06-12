@@ -30,16 +30,29 @@
 
 .tabs-main {
   position: absolute;
-  top: 0px;
+  top: 5px;
   right: 30px;
-  width: 500px;
+  width: 550px;
   z-index: 100;
+}
+
+.tab-global-view-panel {
+  background-color: rgba(240,240,240,0.8);
+  margin-left: 180px;
+}
+.tab-global-view-checkbox-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 10px;
 }
 
 .tab-search-panel {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end; /*center*/
 }
 .category-select {
   /*position: absolute;*/
@@ -119,14 +132,14 @@
 }
 .global-view-img-main {
   position: absolute;
-  top: 40px;
+  top: 0px;
   left: 0px;
   overflow: hidden;
   z-index: 1;
 }
 .global-view-img-mask {
   position: absolute;
-  top: 40px;
+  top: 0px;
   left: 0px;
   overflow: hidden;
   z-index: 20;
