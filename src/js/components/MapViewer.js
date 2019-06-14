@@ -327,12 +327,12 @@ export default class MapViewer extends React.Component {
       >
         <img ref="refImgMain" src={ImgMain} alt="" className="global-view-img-main"/>
 
-        <img hidden={!this.state.showBuilding} ref="refImgBuilding" src={ImgBuilding} alt="" className="global-view-img-mask"/>
         <img hidden={!this.state.showQuGuan} ref="refImgQuGuan" src={ImgQuGuan} alt="" className="global-view-img-mask"/>
         <img hidden={!this.state.showZhenJi} ref="refImgZhenJi" src={ImgZhenJi} alt="" className="global-view-img-mask"/>
         <img hidden={!this.state.showXiaChen} ref="refImgXiaChen" src={ImgXiaChen} alt="" className="global-view-img-mask"/>
         <img hidden={!this.state.showWeiYiJiao} ref="refImgWeiYiJiao" src={ImgWeiYiJiao} alt="" className="global-view-img-mask"/>
-        
+        <img hidden={!this.state.showBuilding} ref="refImgBuilding" src={ImgBuilding} alt="" className="global-view-img-mask"/>
+
       </div>
     );
   }
