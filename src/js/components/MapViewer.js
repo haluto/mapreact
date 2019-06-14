@@ -42,32 +42,35 @@ export default class MapViewer extends React.Component {
     };
   }
   
-  
+  checkWhetherShowMask = (checkedRoads) => {
+  let bQuGuan = false, bZhenJi = false, bXiaChen = false, bWeiYiJiao = false, bBuilding = false;
+    if (checkedRoads.indexOf("vCheckZhenJi") >= 0) {
+      bZhenJi = true;
+    }
+    if (checkedRoads.indexOf("vCheckXiaChen") >= 0) {
+      bXiaChen = true;
+    }
+    if (checkedRoads.indexOf("vCheckQuGuan") >= 0) {
+      bQuGuan = true;
+    }
+    if (checkedRoads.indexOf("vCheckWeiYiJiao") >= 0) {
+      bWeiYiJiao = true;
+    }
+    if (checkedRoads.indexOf("vCheckBuilding") >= 0) {
+      bBuilding = true;
+    }
+    console.log("mapviewer get infomation: ", checkedRoads);
+    this.setState({showZhenJi: bZhenJi,
+                    showQuGuan: bQuGuan,
+                    showXiaChen: bXiaChen,
+                    showBuilding: bBuilding,
+                    showWeiYiJiao: bWeiYiJiao
+    });
+  }
+
   componentWillReceiveProps = (newProps) => {
     if(newProps.checkedRoads !== this.props.checkedRoads) {
-      let bQuGuan = false, bZhenJi = false, bXiaChen = false, bWeiYiJiao = false, bBuilding = false;
-      if (newProps.checkedRoads.indexOf("vCheckZhenJi") >= 0) {
-        bZhenJi = true;
-      }
-      if (newProps.checkedRoads.indexOf("vCheckXiaChen") >=0) {
-        bXiaChen = true;
-      }
-      if (newProps.checkedRoads.indexOf("vCheckQuGuan") >=0) {
-        bQuGuan = true;
-      }
-      if (newProps.checkedRoads.indexOf("vCheckWeiYiJiao") >=0) {
-        bWeiYiJiao = true;
-      }
-      if (newProps.checkedRoads.indexOf("vCheckBuilding") >=0) {
-        bBuilding = true;
-      }
-      console.log("mapviewer get infomation: ", newProps.checkedRoads);
-      this.setState({showZhenJi: bZhenJi,
-                      showQuGuan: bQuGuan,
-                      showXiaChen: bXiaChen,
-                      showBuilding: bBuilding,
-                      showWeiYiJiao: bWeiYiJiao
-      });
+      this.checkWhetherShowMask(newProps.checkedRoads);
     }
   }
 
@@ -81,6 +84,8 @@ export default class MapViewer extends React.Component {
       this.imgInfo.oriH = img.height;
       
       this.scaleImage();
+
+      this.checkWhetherShowMask(this.props.checkedRoads);
     }
   }
   
@@ -322,12 +327,12 @@ export default class MapViewer extends React.Component {
       >
         <img ref="refImgMain" src={ImgMain} alt="" className="global-view-img-main"/>
 
+        <img hidden={!this.state.showBuilding} ref="refImgBuilding" src={ImgBuilding} alt="" className="global-view-img-mask"/>
         <img hidden={!this.state.showQuGuan} ref="refImgQuGuan" src={ImgQuGuan} alt="" className="global-view-img-mask"/>
         <img hidden={!this.state.showZhenJi} ref="refImgZhenJi" src={ImgZhenJi} alt="" className="global-view-img-mask"/>
         <img hidden={!this.state.showXiaChen} ref="refImgXiaChen" src={ImgXiaChen} alt="" className="global-view-img-mask"/>
         <img hidden={!this.state.showWeiYiJiao} ref="refImgWeiYiJiao" src={ImgWeiYiJiao} alt="" className="global-view-img-mask"/>
-        <img hidden={!this.state.showBuilding} ref="refImgBuilding" src={ImgBuilding} alt="" className="global-view-img-mask"/>
-
+        
       </div>
     );
   }

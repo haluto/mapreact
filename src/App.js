@@ -17,6 +17,8 @@ const TAB_IDX_GLOBAL_VIEW = "TabGlobalView";
 const TAB_IDX_SEARCH = "TabSearch";
 const TAB_IDX_DEFAULT = TAB_IDX_GLOBAL_VIEW;
 
+const checkboxDefaultValues = ["vCheckZhenJi", "vCheckQuGuan", "vCheckXiaChen", "vCheckWeiYiJiao", "vCheckBuilding"];
+
 class App extends Component {
   state = {
     //for search panel
@@ -28,7 +30,7 @@ class App extends Component {
     tabIdx: TAB_IDX_DEFAULT,
 
     //for global view panel
-    checkboxValues: []
+    checkboxValues: checkboxDefaultValues
   };
 
   handleCategorySelected = (value) => {
@@ -163,7 +165,8 @@ class App extends Component {
           <Tabs defaultActiveKey={TAB_IDX_DEFAULT} type="card" tabPosition="right" onChange={this.handleTabChange}>
             <Tabs.TabPane tab="道路总览" key={TAB_IDX_GLOBAL_VIEW}>
               <div className="tab-global-view-panel">
-                <Checkbox.Group style={{ width: '100%' }} onChange={this.handleCheckboxChange}>
+                <Checkbox.Group defaultValue={checkboxDefaultValues} 
+                                style={{ width: '100%' }} onChange={this.handleCheckboxChange}>
                   <div className="tab-global-view-checkbox-item">
                     <Checkbox value="vCheckZhenJi"></Checkbox>
                     <div style={{width:"40px",height:"20px",backgroundColor:"rgb(240,130,120)",marginLeft:"5px",marginRight:"5px"}}></div>
