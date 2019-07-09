@@ -1,120 +1,151 @@
 {"roads": [
+  { "name":   "东靖路",
+    "subroads": [{
+      "start":  "杨高北路",
+      "end":    "金京路",
+      "length": "1100",
+      "width": "19",
+      "level":  "二级",
+      "owner":  "公路署",
+      "maintain": "三行市政",
+      "lamp": "44",
+      "waterInlet": "40",
+      "tree": "200"
+    }]
+  },
+
   { "name":   "杨高北路",
     "subroads": [{
-      "start":  "巨峰路",
-      "end":    "航津路",
+      "start":  "航津路",
+      "end":    "巨峰路",
+      "length": "4100",
+      "width":  "33",
       "level":  "一级",
-      "owner":  "浦江桥隧",
-      "length": "",
-      "roadwayWidth": "",
-      "sidewalkWidth": "",
-      "width": "",
-      "green": "",
-      "tree": "",
-      "roadClean": "",
-      "facility": ""
+      "owner":  "公路署",
+      "maintain": "浦江桥隧",
+      "lamp": "164",
+      "waterInlet": "170",
+      "tree": "1100"
     }]
   },
 
   { "name":   "五洲大道",
     "subroads": [{
       "start":  "金京路",
-      "end":    "东塘路",
+      "end":    "东塘公路",
+      "length": "4300",
+      "width":  "21",
       "level":  "一级",
-      "owner":  "公路养护",
-      "length": "4600m",
-      "roadwayWidth": "32m",
-      "sidewalkWidth": "4m",
-      "width": "",
-      "green": "354184",
-      "tree": "196",
-      "roadClean": "230000",
-      "facility": "护栏23400m、井盖135个（仅雨、污水井）"
-    }]
-  },
-
-  { "name":   "航津路",
-    "subroads": [{
-      "start":  "浦东北路",
-      "end":    "杨高北路",
-      "level":  "二级",
-      "owner":  "公路养护",
-      "length": "",
-      "roadwayWidth": "",
-      "sidewalkWidth": "",
-      "width": "",
-      "green": "",
-      "tree": "",
-      "roadClean": "",
-      "facility": ""
+      "owner":  "公路署",
+      "maintain": "五洲大道养护公司",
+      "lamp": "172",
+      "waterInlet": "178",
+      "tree": "1000"
     }]
   },
 
   { "name":   "浦东北路",
     "subroads": [{
-      "start":  "东靖路",
-      "end":    "航津路",
+      "start":  "航津路",
+      "end":    "东高路",
+      "length": "4600",
+      "width":  "19",
       "level":  "二级",
-      "owner":  "公路养护",
-      "length": "",
-      "roadwayWidth": "",
-      "sidewalkWidth": "",
-      "width": "",
-      "green": "",
-      "tree": "",
-      "roadClean": "",
-      "facility": ""
+      "owner":  "公路署",
+      "maintain": "公路养护",
+      "lamp": "184",
+      "waterInlet": "184",
+      "tree": "1200"
+    }]
+  },
+
+  { "name":   "张杨北路",
+    "subroads": [{
+      "start":  "航津路",
+      "end":    "东高路",
+      "length": "4600",
+      "width": "19",
+      "level":  "二级",
+      "owner":  "公路署",
+      "maintain": "三行市政",
+      "lamp": "184",
+      "waterInlet": "180",
+      "tree": "1150"
+    }]
+  },
+
+  { "name":   "东塘公路",
+    "subroads": [{
+      "start":  "大同路",
+      "end":    "东葛路",
+      "length": "4300",
+      "width":  "7",
+      "level":  "三级",
+      "owner":  "公路署",
+      "maintain": "公路养护",
+      "lamp": "172",
+      "waterInlet": "50",
+      "tree": "600"
+    }]
+  },
+
+  { "name":   "航津路",
+    "subroads": [{
+      "start":  "杨高北路",
+      "end":    "浦东北路",
+      "length": "2100",
+      "width":  "26",
+      "level":  "二级",
+      "owner":  "公路署",
+      "maintain": "公路养护",
+      "lamp": "84",
+      "waterInlet": "100",
+      "tree": "420"
+    }]
+  },
+
+  { "name":   "洲海路",
+    "subroads": [{
+      "start":  "杨高北路",
+      "end":    "浦东北路",
+      "length": "2500",
+      "width": "26",
+      "level":  "一级",
+      "owner":  "公路署",
+      "maintain": "三行市政",
+      "lamp": "100",
+      "waterInlet": "106",
+      "tree": "400"
     }]
   },
 
   { "name":   "东葛路",
     "subroads": [{
-      "start":  "东靖路",
-      "end":    "浦东北路",
+      "start":  "浦东北路",
+      "end":    "东高路",
+      "length": "1300",
+      "width":  "19",
       "level":  "二级",
-      "owner":  "公路养护",
-      "length": "",
-      "roadwayWidth": "",
-      "sidewalkWidth": "",
-      "width": "",
-      "green": "",
-      "tree": "",
-      "roadClean": "",
-      "facility": ""
+      "owner":  "公路署",
+      "maintain": "公路养护",
+      "lamp": "52",
+      "waterInlet": "52",
+      "tree": "280"
     }]
   },
 
-  { "name":   "行南路",
+  { "name":   "行南公路",
     "subroads": [{
       "start":  "浦东北路",
       "end":    "东塘路",
+      "length": "2800",
+      "width":  "12",
       "level":  "三级",
-      "owner":  "公路养护",
-      "length": "",
-      "roadwayWidth": "",
-      "sidewalkWidth": "",
-      "width": "",
-      "green": "",
-      "tree": "",
-      "roadClean": "",
-      "facility": ""
-    }]
-  },
-
-  { "name":   "东塘路",
-    "subroads": [{
-      "start":  "东沟路",
-      "end":    "大同路",
-      "level":  "三级",
-      "owner":  "公路养护",
-      "length": "",
-      "roadwayWidth": "",
-      "sidewalkWidth": "",
-      "width": "",
-      "green": "",
-      "tree": "",
-      "roadClean": "",
-      "facility": ""
+      "owner":  "公路署",
+      "maintain": "公路养护",
+      "lamp": "112",
+      "waterInlet": "50",
+      "tree": "220"
     }]
   },
 
@@ -122,84 +153,29 @@
     "subroads": [{
       "start":  "俱进路",
       "end":    "巨峰路",
-      "level":  "三级",
-      "owner":  "三行市政",
-      "length": "2200m",
-      "roadwayWidth": "",
-      "sidewalkWidth": "",
-      "width": "50m",
-      "green": "1543",
-      "tree": "",
-      "roadClean": "110000",
-      "facility": "护栏19550m、井盖167个"
-    }]
-  },
-
-  { "name":   "东路支路",
-    "subroads": [{
-      "start":  "东高路",
-      "end":    "赵家沟路",
-      "level":  "三级",
-      "owner":  "三行市政",
-      "length": "487m",
-      "roadwayWidth": "",
-      "sidewalkWidth": "",
-      "width": "9m",
-      "green": "",
-      "tree": "",
-      "roadClean": "4383",
-      "facility": "井盖9个"
-    }]
-  },
-
-  { "name":   "洲海路",
-    "subroads": [{
-      "start":  "浦东北路",
-      "end":    "杨高北路",
-      "level":  "一级",
-      "owner":  "三行市政",
-      "length": "2500m",
-      "roadwayWidth": "",
-      "sidewalkWidth": "",
-      "width": "50m",
-      "green": "13950",
-      "tree": "",
-      "roadClean": "125000",
-      "facility": "井盖173个"
-    }]
-  },
-
-  { "name":   "东靖路",
-    "subroads": [{
-      "start":  "杨高北路",
-      "end":    "金京路",
+      "length": "2200",
+      "width": "14",
       "level":  "二级",
-      "owner":  "三行市政",
-      "length": "1100m",
-      "roadwayWidth": "",
-      "sidewalkWidth": "",
-      "width": "40m",
-      "green": "6600",
-      "tree": "",
-      "roadClean": "44000",
-      "facility": "护栏1491m、井盖85个"
-    }]
+      "owner":  "公路署",
+      "maintain": "三行市政",
+      "lamp": "88",
+      "waterInlet": "80",
+      "tree": "450"
+     }]
   },
 
-  { "name":   "张杨北路",
+  { "name":   "申江路",
     "subroads": [{
-      "start":  "东高路",
-      "end":    "航津路",
+      "start":  "赵家沟",
+      "end":    "巨峰路",
+      "length": "1100",
+      "width":  "20",
       "level":  "二级",
-      "owner":  "三行市政",
-      "length": "4600m",
-      "roadwayWidth": "",
-      "sidewalkWidth": "",
-      "width": "55m",
-      "green": "11823.5",
-      "tree": "",
-      "roadClean": "253000",
-      "facility": "护栏3902、井盖206个"
+      "owner":  "公路署",
+      "maintain": "路桥市政",
+      "lamp": "40",
+      "waterInlet": "40",
+      "tree": "180"
     }]
   }
 ]}

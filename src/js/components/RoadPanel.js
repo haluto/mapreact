@@ -88,16 +88,14 @@ export default class RoadPanel extends React.Component {
             >
               <div>起点：{subroad.start}</div>
               <div>终点：{subroad.end}</div>
+              <div>长（米）：{subroad.length}</div>
+              <div>宽（米）：{subroad.width}</div>
               <div>道路等级：{subroad.level}</div>
-              <div>养护单位：{subroad.owner}</div>
-              <div>道路长度：{subroad.length}</div>
-              <div>车行道宽度：{subroad.roadwayWidth}</div>
-              <div>人行道宽度：{subroad.sidewalkWidth}</div>
-              <div>道路宽度：{subroad.width}</div>
-              <div>绿化（m2）：{subroad.green}</div>
+              <div>管理单位：{subroad.owner}</div>
+              <div>养护单位：{subroad.maintain}</div>
+              <div>路灯（盏）：{subroad.lamp}</div>
+              <div>雨污水井（个）：{subroad.waterInlet}</div>
               <div>行道树（株）：{subroad.tree}</div>
-              <div>道路保洁（m）：{subroad.roadClean}</div>
-              <div>市政设施(井盖、护栏、路灯等)：{subroad.facility}</div>
             </div>
           );
           return i;
