@@ -96,6 +96,27 @@ export default class RoadPanel extends React.Component {
           return i;
         });
       }
+    } else if(category === "WeiYiJiao") {
+      if(roadInfo.subroads) {
+        roadInfo.subroads.map((subroad, i) => {
+          panels.push(
+            <div key={i} className='roadpanel-onepanel'
+            >
+              <div>起点：{subroad.start}</div>
+              <div>终点：{subroad.end}</div>
+              <div>长（米）：{subroad.length}</div>
+              <div>宽（米）：{subroad.width}</div>
+              <div>道路等级：{subroad.level}</div>
+              <div>管理单位：{subroad.owner}</div>
+              <div>养护单位：{subroad.maintain}</div>
+              <div>路灯（盏）：{subroad.lamp}</div>
+              <div>雨污水井（个）：{subroad.waterInlet}</div>
+              <div>行道树（株）：{subroad.tree}</div>
+            </div>
+          );
+          return i;
+        });
+      }
     } else if(category === "HeDao") {
       if(roadInfo.subroads) {
         roadInfo.subroads.map((subroad, i) => {

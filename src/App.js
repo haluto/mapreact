@@ -10,6 +10,7 @@ import MapViewer from "./js/components/MapViewer";
 import getXiaChenDaoLuData from "./js/localdata/xiachendaolu";
 import getZhenJiDaoLuData from "./js/localdata/zhenjidaolu";
 import getQuGuanDaoLuData from "./js/localdata/quguandaolu";
+import getWeiYiJiaoData from "./js/localdata/weiyijiao";
 import getHeDaoData from "./js/localdata/hedao";
 import getLvHuaData from "./js/localdata/lvhua";
 
@@ -45,6 +46,9 @@ class App extends Component {
       break;
       case "QuGuanDaoLu":
       jsonFile = "./quguandaolu.json";
+      break;
+      case "WeiYiJiao":
+      jsonFile = "./weiyijiao.json";
       break;
       case "HeDao":
       jsonFile = "./hedao.json";
@@ -112,6 +116,9 @@ class App extends Component {
           break;
           case "QuGuanDaoLu":
           arr = getQuGuanDaoLuData();
+          break;
+          case "WeiYiJiao":
+          arr = getWeiYiJiaoData();
           break;
           case "HeDao":
           arr = getHeDaoData();
@@ -201,12 +208,13 @@ class App extends Component {
                 <div className="category-select">
                   <Select 
                     defaultValue="XiaChenDaoLu" 
-                    style={{width:100}}
+                    style={{width:160}}
                     onSelect={this.handleCategorySelected}
                   >
                     <Select.Option value="XiaChenDaoLu">下沉道路</Select.Option>
                     <Select.Option value="ZhenJiDaoLu">镇级道路</Select.Option>
                     <Select.Option value="QuGuanDaoLu">区管道路</Select.Option>
+                    <Select.Option value="WeiYiJiao">未移交（在建）道路</Select.Option>
                     <Select.Option value="HeDao">河道水体</Select.Option>
                     <Select.Option value="LvHua">绿化</Select.Option>
                   </Select>
