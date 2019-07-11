@@ -157,14 +157,6 @@ const LvHuaJson = {"roads": [
     }]
   },
 
-  { "name":   "行南路（浦东北路-东塘路）",
-    "index":  "10",
-    "subroads": [{
-      "area":   "14000",
-      "maintain": "佳保"
-    }]
-  },
-
   { "name":   "行泰路（东靖路-金京路）",
     "index":  "11",
     "subroads": [{

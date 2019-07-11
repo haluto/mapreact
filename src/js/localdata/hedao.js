@@ -90,23 +90,6 @@ const HeDaoJson = {"roads": [
     }]
   },
 
-  { "name":   "中虬江",
-    "index":  "18",
-    "code":   "PD-GH-20117",
-    "subroads": [{
-      "level":  "镇管",
-      "length": "1667.6192204",
-      "area":   "30244.201399",
-      "overtown":  "否",
-      "towns":    "高行镇",
-      "class":    "河道",
-      "control": "是",
-      "start":  "北姚家浜",
-      "end":    "管线桥",
-      "ownertown": "高行镇"
-    }]
-  },
-
   { "name":   "北姚家浜",
     "index":  "19",
     "code":   "PD-GH-20180",
@@ -277,23 +260,6 @@ const HeDaoJson = {"roads": [
     }]
   },
 
-  { "name":   "北虬江",
-    "index":  "37",
-    "code":   "PD-GH-20115",
-    "subroads": [{
-      "level":  "镇管",
-      "length": "483.055322978",
-      "area":   "5766.82706228",
-      "overtown":  "否",
-      "towns":    "高行镇",
-      "class":    "河道",
-      "control": "是",
-      "start":  "规划三河",
-      "end":    "杨高北路",
-      "ownertown": "高行镇"
-    }]
-  },
-
   { "name":   "浦东牡丹园景观水体",
     "index":  "39",
     "code":   "PD-GH-X4554",
@@ -304,23 +270,6 @@ const HeDaoJson = {"roads": [
       "overtown":  "否",
       "towns":    "高行镇",
       "class":    "小区/单位水体",
-      "control": "是",
-      "start":  "",
-      "end":    "",
-      "ownertown": "高行镇"
-    }]
-  },
-
-  { "name":   "高行绿洲五期东侧池塘",
-    "index":  "40",
-    "code":   "PD-GH-X0246",
-    "subroads": [{
-      "level":  "其他水体",
-      "length": "0",
-      "area":   "733.057270199",
-      "overtown":  "否",
-      "towns":    "高行镇",
-      "class":    "除公园外的其他绿化水体",
       "control": "是",
       "start":  "",
       "end":    "",
@@ -477,23 +426,6 @@ const HeDaoJson = {"roads": [
       "control": "是",
       "start":  "周桥陆家宅36号",
       "end":    "周桥陆家宅39号",
-      "ownertown": "高行镇"
-    }]
-  },
-
-  { "name":   "后陆园沟",
-    "index":  "54",
-    "code":   "PD-GH-X1640",
-    "subroads": [{
-      "level":  "其他水体",
-      "length": "0",
-      "area":   "706.140895996",
-      "overtown":  "否",
-      "towns":    "高行镇",
-      "class":    "其他坑塘水体",
-      "control": "是",
-      "start":  "陆家宅99号",
-      "end":    "陆家宅109号",
       "ownertown": "高行镇"
     }]
   },
