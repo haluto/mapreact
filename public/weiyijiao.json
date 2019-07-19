@@ -10,7 +10,14 @@
       "maintain": "外股份",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -25,7 +32,14 @@
       "maintain": "外股份",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -40,7 +54,14 @@
       "maintain": "高行镇",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -55,7 +76,14 @@
       "maintain": "高行镇",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -70,7 +98,14 @@
       "maintain": "外股份",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -85,7 +120,14 @@
       "maintain": "外股份",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -100,7 +142,14 @@
       "maintain": "建交委",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -115,7 +164,14 @@
       "maintain": "外股份",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -130,7 +186,14 @@
       "maintain": "外股份",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -145,7 +208,14 @@
       "maintain": "",
       "lamp": "",
       "waterInlet": "",
-      "tree": ""
+      "tree": "",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   }
 ]}

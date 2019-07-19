@@ -56,7 +56,33 @@
       "maintain": "佳保",
       "lamp":   "46",
       "waterInlet": "81",
-      "tree": "334"
+      "tree": "334",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -71,7 +97,33 @@
       "maintain": "佳保",
       "lamp":   "70",
       "waterInlet": "50",
-      "tree": "298"
+      "tree": "298",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -86,7 +138,33 @@
       "maintain": "通昌",
       "lamp":   "112",
       "waterInlet": "47",
-      "tree": "187"
+      "tree": "187",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -101,7 +179,33 @@
       "maintain": "佳保",
       "lamp":   "26",
       "waterInlet": "47",
-      "tree": "163"
+      "tree": "163",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -116,7 +220,33 @@
       "maintain": "佳保",
       "lamp":   "46",
       "waterInlet": "66",
-      "tree": "242"
+      "tree": "242",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -131,7 +261,33 @@
       "maintain": "佳保",
       "lamp":   "24",
       "waterInlet": "29",
-      "tree": "79"
+      "tree": "79",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -146,7 +302,33 @@
       "maintain": "佳保",
       "lamp":   "32",
       "waterInlet": "61",
-      "tree": "130"
+      "tree": "130",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -161,7 +343,33 @@
       "maintain": "通昌",
       "lamp":   "20",
       "waterInlet": "2",
-      "tree": "130"
+      "tree": "130",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -176,7 +384,33 @@
       "maintain": "通昌",
       "lamp":   "44",
       "waterInlet": "35",
-      "tree": "360"
+      "tree": "360",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -191,7 +425,33 @@
       "maintain": "通昌",
       "lamp":   "48",
       "waterInlet": "26",
-      "tree": "352"
+      "tree": "352",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -206,7 +466,33 @@
       "maintain": "佳保",
       "lamp":   "50",
       "waterInlet": "94",
-      "tree": "198"
+      "tree": "198",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -221,7 +507,33 @@
       "maintain": "通昌",
       "lamp":   "32",
       "waterInlet": "26",
-      "tree": "222"
+      "tree": "222",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -236,7 +548,33 @@
       "maintain": "通昌",
       "lamp":   "58",
       "waterInlet": "91",
-      "tree": "325"
+      "tree": "325",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -251,7 +589,33 @@
       "maintain": "通昌",
       "lamp":   "22",
       "waterInlet": "15",
-      "tree": "155"
+      "tree": "155",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -266,7 +630,33 @@
       "maintain": "通昌",
       "lamp":   "22",
       "waterInlet": "0",
-      "tree": "76"
+      "tree": "76",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -281,7 +671,33 @@
       "maintain": "通昌",
       "lamp":   "18",
       "waterInlet": "12",
-      "tree": "40"
+      "tree": "40",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -296,7 +712,33 @@
       "maintain": "通昌",
       "lamp":   "20",
       "waterInlet": "16",
-      "tree": "38"
+      "tree": "38",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -311,7 +753,33 @@
       "maintain": "通昌",
       "lamp":   "14",
       "waterInlet": "10",
-      "tree": "26"
+      "tree": "26",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -326,7 +794,33 @@
       "maintain": "通昌",
       "lamp":   "16",
       "waterInlet": "10",
-      "tree": "30"
+      "tree": "30",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 
@@ -341,7 +835,33 @@
       "maintain": "佳保",
       "lamp":   "16",
       "waterInlet": "16",
-      "tree": "38"
+      "tree": "38",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   }
 ]}

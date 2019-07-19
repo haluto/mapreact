@@ -33,31 +33,11 @@ export default class RoadPanel extends React.Component {
     let category = this.props.category;
 
     let panels = [];
-    if(category === "XiaChenDaoLu") {
+    if(category === "XiaChenDaoLu" || category === "ZhenJiDaoLu" 
+          || category === "QuGuanDaoLu" || category === "WeiYiJiao") {
       if(roadInfo.subroads) {
         roadInfo.subroads.map((subroad, i) => {
-          panels.push(
-            <div key={i} className='roadpanel-onepanel'
-            >
-              <div>起点：{subroad.start}</div>
-              <div>终点：{subroad.end}</div>
-              <div>长（米）：{subroad.length}</div>
-              <div>宽（米）：{subroad.width}</div>
-              <div>道路等级：{subroad.level}</div>
-              <div>管理单位：{subroad.owner}</div>
-              <div>养护单位：{subroad.maintain}</div>
-              <div>路灯（盏）：{subroad.lamp}</div>
-              <div>雨污水井（个）：{subroad.waterInlet}</div>
-              <div>行道树（株）：{subroad.tree}</div>
-            </div>
-          );
-          return i;
-        });
-      }
-    } else if(category === "ZhenJiDaoLu") {
-      if(roadInfo.subroads) {
-        roadInfo.subroads.map((subroad, i) => {
-
+          
           // 农贸市场
           let nongMaoElement = [];
           if (subroad.nongMaoShiChang) {
@@ -138,56 +118,14 @@ export default class RoadPanel extends React.Component {
               <div style={{float: 'left'}}>路灯（盏）：{subroad.lamp}</div> <br />
               <div style={{float: 'left'}}>雨污水井（个）：{subroad.waterInlet}</div> <br />
               <div style={{float: 'left'}}>行道树（株）：{subroad.tree}</div> <br />
-              <br />
+              <br hidden={nongMaoElement.length===0}></br>
               {nongMaoElement}
-              <br />
+              <br hidden={juMinQuElement.length===0}></br>
               {juMinQuElement}
-              <br />
+              <br hidden={gongGongSheShiElement.length===0}></br>
               {gongGongSheShiElement}
-              <br />
+              <br hidden={gongJiaoXianLuElement.length===0}></br>
               {gongJiaoXianLuElement}
-            </div>
-          );
-          return i;
-        });
-      }
-    } else if(category === "QuGuanDaoLu") {
-      if(roadInfo.subroads) {
-        roadInfo.subroads.map((subroad, i) => {
-          panels.push(
-            <div key={i} className='roadpanel-onepanel'
-            >
-              <div>起点：{subroad.start}</div>
-              <div>终点：{subroad.end}</div>
-              <div>长（米）：{subroad.length}</div>
-              <div>宽（米）：{subroad.width}</div>
-              <div>道路等级：{subroad.level}</div>
-              <div>管理单位：{subroad.owner}</div>
-              <div>养护单位：{subroad.maintain}</div>
-              <div>路灯（盏）：{subroad.lamp}</div>
-              <div>雨污水井（个）：{subroad.waterInlet}</div>
-              <div>行道树（株）：{subroad.tree}</div>
-            </div>
-          );
-          return i;
-        });
-      }
-    } else if(category === "WeiYiJiao") {
-      if(roadInfo.subroads) {
-        roadInfo.subroads.map((subroad, i) => {
-          panels.push(
-            <div key={i} className='roadpanel-onepanel'
-            >
-              <div>起点：{subroad.start}</div>
-              <div>终点：{subroad.end}</div>
-              <div>长（米）：{subroad.length}</div>
-              <div>宽（米）：{subroad.width}</div>
-              <div>道路等级：{subroad.level}</div>
-              <div>管理单位：{subroad.owner}</div>
-              <div>养护单位：{subroad.maintain}</div>
-              <div>路灯（盏）：{subroad.lamp}</div>
-              <div>雨污水井（个）：{subroad.waterInlet}</div>
-              <div>行道树（株）：{subroad.tree}</div>
             </div>
           );
           return i;
