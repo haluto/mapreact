@@ -10,7 +10,38 @@
       "maintain": "佳保",
       "lamp":   "60",
       "waterInlet": "56",
-      "tree": "122"
+      "tree": "122",
+      "commentLine1": "农贸市场------------------",
+      "nongMaoShiChang": [{
+        "name":   "",
+        "area":   "",
+        "number": "",
+        "trash":  ""
+      }],
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "华高四居",
+        "number": "1418",
+        "side": "双桥路（南）  赵家沟（北）  金高路（东） 杨高路（西）",
+        "district": "宜嘉苑（业委会）★  春江花月苑（业委会）★"
+      },{
+        "name": "东力居委",
+        "number": "1323",
+        "side": "申江路（西） 巨峰路（南）    赵家沟（北） 高东镇（东）",
+        "district": "东力新村（业委会）申江名邸（业委会东源丽晶别墅)"
+      }],
+      "commentLine3": "公共设施------------------",
+      "gongGongSheShi": [{
+        "name": "",
+        "area": "",
+        "mantain": ""
+      }],
+      "commentLine4": "公交线路------------------",
+      "gongJiaoXianLu": [{
+        "name": "",
+        "number": "",
+        "portName": ""
+      }]
     }]
   },
 

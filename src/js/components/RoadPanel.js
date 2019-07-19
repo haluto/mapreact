@@ -57,19 +57,95 @@ export default class RoadPanel extends React.Component {
     } else if(category === "ZhenJiDaoLu") {
       if(roadInfo.subroads) {
         roadInfo.subroads.map((subroad, i) => {
+
+          // 农贸市场
+          let nongMaoElement = [];
+          if (subroad.nongMaoShiChang) {
+            nongMaoElement.push(<div style={{float: 'left'}}><b>农贸市场：</b></div>); // title
+            nongMaoElement.push(<br />);
+            subroad.nongMaoShiChang.map((subNongMao, a) => {
+              nongMaoElement.push(
+                <div key={a} style={{borderBottom: "1px solid rgb(200,200,200)"}}> 
+                  <div style={{float: 'left'}}>菜市场名称：{subNongMao.name}</div> <br />
+                  <div style={{float: 'left'}}>经营面积：{subNongMao.area}</div> <br />
+                  <div style={{float: 'left'}}>总摊位数：{subNongMao.number}</div> <br />
+                  <div style={{float: 'left'}}>垃圾清运单位： {subNongMao.trash}</div> <br />
+                </div>
+              );
+              return a;
+            });
+          }
+          // 居民区
+          let juMinQuElement = [];
+          if (subroad.juMinQu) {
+            juMinQuElement.push(<div style={{float: 'left'}}><b>居民区：</b></div>); // title
+            juMinQuElement.push(<br />);
+            subroad.juMinQu.map((subJuMinQu, b) => {
+              juMinQuElement.push(
+                <div key={b} style={{borderBottom: "1px solid rgb(200,200,200)"}}>
+                  <div style={{float: 'left'}}>居委名称：{subJuMinQu.name}</div> <br />
+                  <div style={{float: 'left'}}>户数：{subJuMinQu.number}</div> <br />
+                  <div style={{float: 'left'}}>四至边界：{subJuMinQu.side}</div> <br />
+                  <div style={{float: 'left'}}>所辖小区：{subJuMinQu.district}</div> <br />
+                </div>
+              );
+              return b;
+            });
+          }
+          // 公共设施
+          let gongGongSheShiElement = [];
+          if (subroad.gongGongSheShi) {
+            gongGongSheShiElement.push(<div style={{float: 'left'}}><b>公共设施：</b></div>); // title
+            gongGongSheShiElement.push(<br />);
+            subroad.gongGongSheShi.map((subSheShi, c) => {
+              gongGongSheShiElement.push(
+                <div key={c} style={{borderBottom: "1px solid rgb(200,200,200)"}}>
+                  <div style={{float: 'left'}}>名称：{subSheShi.name}</div> <br />
+                  <div style={{float: 'left'}}>面积（m2）：{subSheShi.area}</div> <br />
+                  <div style={{float: 'left'}}>养护单位：{subSheShi.maintain}</div> <br />
+                </div>
+              );
+              return c;
+            });
+          }
+          // 公交线路
+          let gongJiaoXianLuElement = [];
+          if (subroad.gongJiaoXianLu) {
+            gongJiaoXianLuElement.push(<div style={{float: 'left'}}><b>公交线路：</b></div>); // title
+            gongJiaoXianLuElement.push(<br />);
+            subroad.gongJiaoXianLu.map((subGongJiao, d) => {
+              gongJiaoXianLuElement.push(
+                <div key={d} style={{borderBottom: "1px solid rgb(200,200,200)"}}>
+                  <div style={{float: 'left'}}>线路名称：{subGongJiao.name}</div> <br />
+                  <div style={{float: 'left'}}>站点数量：{subGongJiao.number}</div> <br />
+                  <div style={{float: 'left'}}>站点名称：{subGongJiao.portName}</div> <br />
+                </div>
+              );
+              return d;
+            });
+          }
+          // total element with basic infos.
           panels.push(
             <div key={i} className='roadpanel-onepanel'
             >
-              <div>起点：{subroad.start}</div>
-              <div>终点：{subroad.end}</div>
-              <div>长（米）：{subroad.length}</div>
-              <div>宽（米）：{subroad.width}</div>
-              <div>道路等级：{subroad.level}</div>
-              <div>管理单位：{subroad.owner}</div>
-              <div>养护单位：{subroad.maintain}</div>
-              <div>路灯（盏）：{subroad.lamp}</div>
-              <div>雨污水井（个）：{subroad.waterInlet}</div>
-              <div>行道树（株）：{subroad.tree}</div>
+              <div style={{float: 'left'}}>起点：{subroad.start}</div> <br />
+              <div style={{float: 'left'}}>终点：{subroad.end}</div> <br />
+              <div style={{float: 'left'}}>长（米）：{subroad.length}</div> <br />
+              <div style={{float: 'left'}}>宽（米）：{subroad.width}</div> <br />
+              <div style={{float: 'left'}}>道路等级：{subroad.level}</div> <br />
+              <div style={{float: 'left'}}>管理单位：{subroad.owner}</div> <br />
+              <div style={{float: 'left'}}>养护单位：{subroad.maintain}</div> <br />
+              <div style={{float: 'left'}}>路灯（盏）：{subroad.lamp}</div> <br />
+              <div style={{float: 'left'}}>雨污水井（个）：{subroad.waterInlet}</div> <br />
+              <div style={{float: 'left'}}>行道树（株）：{subroad.tree}</div> <br />
+              <br />
+              {nongMaoElement}
+              <br />
+              {juMinQuElement}
+              <br />
+              {gongGongSheShiElement}
+              <br />
+              {gongJiaoXianLuElement}
             </div>
           );
           return i;
