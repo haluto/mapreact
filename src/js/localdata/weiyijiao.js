@@ -16,7 +16,14 @@ const WeiYiJiaoJson = {"roads": [
       "maintain": "外股份",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -31,7 +38,14 @@ const WeiYiJiaoJson = {"roads": [
       "maintain": "外股份",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -46,7 +60,14 @@ const WeiYiJiaoJson = {"roads": [
       "maintain": "高行镇",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "海韵茗庭",
+        "number": "1498",
+        "side": "思学路（东）  莱阳路  （南）  连城新苑（西  浦东北路（北）",
+        "district": "海韵茗庭和东旭雅苑"
+      }]
     }]
   },
 
@@ -61,7 +82,14 @@ const WeiYiJiaoJson = {"roads": [
       "maintain": "高行镇",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "汇郡居委",
+        "number": "1760",
+        "side": "思学路（南） 高博路（东）",
+        "district": "汇郡海棠苑 汇郡米兰苑"
+      }]
     }]
   },
 
@@ -76,7 +104,14 @@ const WeiYiJiaoJson = {"roads": [
       "maintain": "外股份",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -91,7 +126,14 @@ const WeiYiJiaoJson = {"roads": [
       "maintain": "外股份",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -106,7 +148,14 @@ const WeiYiJiaoJson = {"roads": [
       "maintain": "建交委",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -121,7 +170,14 @@ const WeiYiJiaoJson = {"roads": [
       "maintain": "外股份",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -136,7 +192,14 @@ const WeiYiJiaoJson = {"roads": [
       "maintain": "外股份",
       "lamp": "待核定",
       "waterInlet": "待核定",
-      "tree": "待核定"
+      "tree": "待核定",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   },
 
@@ -151,7 +214,14 @@ const WeiYiJiaoJson = {"roads": [
       "maintain": "",
       "lamp": "",
       "waterInlet": "",
-      "tree": ""
+      "tree": "",
+      "commentLine2": "居民区------------------",
+      "juMinQu": [{
+        "name": "",
+        "number": "",
+        "side": "",
+        "district": ""
+      }]
     }]
   }
 ]};
