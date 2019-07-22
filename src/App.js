@@ -14,6 +14,8 @@ import getWeiYiJiaoData from "./js/localdata/weiyijiao";
 import getHeDaoData from "./js/localdata/hedao";
 import getLvHuaData from "./js/localdata/lvhua";
 
+import getDataInfo from "./GetInfo";
+
 const TAB_IDX_GLOBAL_VIEW = "TabGlobalView";
 const TAB_IDX_SEARCH = "TabSearch";
 const TAB_IDX_DEFAULT = TAB_IDX_GLOBAL_VIEW;
@@ -31,7 +33,15 @@ class App extends Component {
     tabIdx: TAB_IDX_DEFAULT,
 
     //for global view panel
-    checkboxValues: checkboxDefaultValues
+    checkboxValues: checkboxDefaultValues,
+
+    //total number infos.
+    totalXiaChen: 0,
+    totalZhenJi: 0,
+    totalQuGuan: 0,
+    totalWeiYiJiao: 0,
+    totalLvHua: 0,
+    totalHeDao: 0
   };
 
   handleCategorySelected = (value) => {
@@ -142,6 +152,26 @@ class App extends Component {
     
     this.handleWindowResize();
     window.addEventListener('resize', this.handleWindowResize);
+
+    //get total nubmer info of all categories.
+    getDataInfo("XiaChenDaoLu", (ret) => {
+      this.setState({totalXiaChen: ret});
+    });
+    getDataInfo("ZhenJiDaoLu", (ret) => {
+      this.setState({totalZhenJi: ret});
+    });
+    getDataInfo("QuGuanDaoLu", (ret) => {
+      this.setState({totalQuGuan: ret});
+    });
+    getDataInfo("WeiYiJiao", (ret) => {
+      this.setState({totalWeiYiJiao: ret});
+    });
+    getDataInfo("HeDao", (ret) => {
+      this.setState({totalHeDao: ret});
+    });
+    getDataInfo("LvHua", (ret) => {
+      this.setState({totalLvHua: ret});
+    });
   }
   componentWillUnmount = () => {
     window.removeEventListener('resize', this.handleWindowResize);
@@ -177,22 +207,22 @@ class App extends Component {
                   <div className="tab-global-view-checkbox-item">
                     <Checkbox value="vCheckZhenJi"></Checkbox>
                     <div style={{width:"40px",height:"20px",backgroundColor:"rgb(240,130,120)",marginLeft:"5px",marginRight:"5px"}}></div>
-                    <div>镇级道路</div>
+                    <div>镇级道路<span style={{color:"rgb(240,130,120)"}}>({this.state.totalZhenJi})</span></div>
                   </div>
                   <div className="tab-global-view-checkbox-item">
                     <Checkbox value="vCheckQuGuan"></Checkbox>
                     <div style={{width:"40px",height:"20px",backgroundColor:"rgb(163,204,129)",marginLeft:"5px",marginRight:"5px"}}></div>
-                    <div>区管道路</div>
+                    <div>区管道路<span style={{color:"rgb(163,204,129)"}}>({this.state.totalQuGuan})</span></div>
                   </div>
                   <div className="tab-global-view-checkbox-item">
                     <Checkbox value="vCheckXiaChen"></Checkbox>
                     <div style={{width:"40px",height:"20px",backgroundColor:"rgb(124,133,183)",marginLeft:"5px",marginRight:"5px"}}></div>
-                    <div>下沉道路</div>
+                    <div>下沉道路<span style={{color:"rgb(124,133,183)"}}>({this.state.totalXiaChen})</span></div>
                   </div>
                   <div className="tab-global-view-checkbox-item">
                     <Checkbox value="vCheckWeiYiJiao"></Checkbox>
                     <div style={{width:"40px",height:"20px",backgroundColor:"rgb(235,185,122)",marginLeft:"5px",marginRight:"5px"}}></div>
-                    <div>未移交（在建）道路</div>
+                    <div>未移交（在建）道路<span style={{color:"rgb(235,185,122)"}}>({this.state.totalWeiYiJiao})</span></div>
                   </div>
                   <div className="tab-global-view-checkbox-item">
                     <Checkbox value="vCheckBuilding"></Checkbox>
@@ -208,15 +238,15 @@ class App extends Component {
                 <div className="category-select">
                   <Select 
                     defaultValue="XiaChenDaoLu" 
-                    style={{width:160}}
+                    style={{width:200}}
                     onSelect={this.handleCategorySelected}
                   >
-                    <Select.Option value="XiaChenDaoLu">下沉道路</Select.Option>
-                    <Select.Option value="ZhenJiDaoLu">镇级道路</Select.Option>
-                    <Select.Option value="QuGuanDaoLu">区管道路</Select.Option>
-                    <Select.Option value="WeiYiJiao">未移交（在建）道路</Select.Option>
-                    <Select.Option value="HeDao">河道水体</Select.Option>
-                    <Select.Option value="LvHua">绿化</Select.Option>
+                    <Select.Option value="XiaChenDaoLu">下沉道路<span style={{color:"rgb(124,133,183)"}}>({this.state.totalXiaChen})</span></Select.Option>
+                    <Select.Option value="ZhenJiDaoLu">镇级道路<span style={{color:"rgb(240,130,120)"}}>({this.state.totalZhenJi})</span></Select.Option>
+                    <Select.Option value="QuGuanDaoLu">区管道路<span style={{color:"rgb(163,204,129)"}}>({this.state.totalQuGuan})</span></Select.Option>
+                    <Select.Option value="WeiYiJiao">未移交（在建）道路<span style={{color:"rgb(235,185,122)"}}>({this.state.totalWeiYiJiao})</span></Select.Option>
+                    <Select.Option value="HeDao">河道水体<span style={{color:"rgb(0,0,0)"}}>({this.state.totalHeDao})</span></Select.Option>
+                    <Select.Option value="LvHua">绿化<span style={{color:"rgb(0,0,0)"}}>({this.state.totalLvHua})</span></Select.Option>
                   </Select>
                 </div>
                 <div className="search-bar">
